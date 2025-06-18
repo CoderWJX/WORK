@@ -1,0 +1,29 @@
+2022-03-17 10:21:03,335 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32merge-baseline_20220317-102103/ncf32merge-baseline_20220317-102103.log
+2022-03-17 10:21:14,371 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 10:21:14,398 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = None
+2022-03-17 10:21:14,398 - INFO  - baseline!
+2022-03-17 10:21:14,409 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+2022-03-17 10:21:14,409 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7f3b978c0f70>
+
+2022-03-17 10:21:14,409 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)

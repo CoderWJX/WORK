@@ -1,0 +1,1926 @@
+Torch device: cuda
+{'_jit_bailout_depth': 2, '_jit_fusion_strategy': [('DYNAMIC', 3)], 'root': '/mnt/yujie.zeng/project_2023/allegro_models/', 'run_name': 'Light-Allegro-3Layer-6rmax_qat_bs8_epoch50', 'wandb': False, 'wandb_project': 'aspirin', 'model_builders': ['allegro.model.Allegro', 'PerSpeciesRescale', 'ForceOutput', 'RescaleEnergyEtc'], 'dataset_statistics_stride': 1, 'default_dtype': 'float32', 'allow_tf32': False, 'verbose': 'info', 'model_debug_mode': False, 'equivariance_test': False, 'grad_anomaly_mode': False, 'append': True, 'taskname': 'qat', 'base_train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0', 'train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-6rmax_qat_bs8_epoch50', 'qat_batch_size': 16, 'repeat': 1, 'quan': {'ptq_batches': 200, 'act': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'weight': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'excepts': {'conv1': {'act': {'bit': 8, 'all_positive': False, 'symmetric': True}, 'weight': {'bit': 8}}, 'fc': {'act': {'bit': 8}, 'weight': {'bit': 8}}, 'linear': {'act': {'bit': 8}, 'weight': {'bit': 8}}}}, 'seed': 123456, 'dataset_seed': 123456, 'r_max': 6.0, 'avg_num_neighbors': 72.66349029541016, 'BesselBasis_trainable': True, 'PolynomialCutoff_p': 6, 'l_max': 2, 'parity': 'o3_restricted', 'num_layers': 3, 'env_embed_multiplicity': 16, 'embed_initial_edge': True, 'two_body_latent_mlp_latent_dimensions': [32, 32, 32, 32], 'two_body_latent_mlp_nonlinearity': 'silu', 'two_body_latent_mlp_initialization': 'uniform', 'latent_mlp_latent_dimensions': [32], 'latent_mlp_nonlinearity': 'silu', 'latent_mlp_initialization': 'uniform', 'latent_resnet': True, 'env_embed_mlp_latent_dimensions': [], 'env_embed_mlp_initialization': 'uniform', 'edge_eng_mlp_latent_dimensions': [32], 'edge_eng_mlp_nonlinearity': None, 'edge_eng_mlp_initialization': 'uniform', 'dataset': 'ase', 'dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Trainset.xyz', 'ase_args': {'format': 'extxyz'}, 'chemical_symbol_to_type': {'N': 0, 'Si': 1}, 'validation_dataset': 'ase', 'validation_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Validset.xyz', 'evaluate_dataset': 'ase', 'evaluate_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Testset.xyz', 'log_batch_freq': 100, 'log_epoch_freq': 1, 'save_checkpoint_freg': -1, 'save_ema_checkpoint_freq': -1, 'n_train': 6402, 'n_val': 810, 'batch_size': 8, 'max_epochs': 300, 'learning_rate': 0.005, 'train_val_split': 'random', 'shuffle': True, 'metrics_key': 'validation_e/N_mae', 'use_ema': True, 'ema_decay': 0.99, 'ema_use_num_updates': True, 'loss_coeffs': {'forces': 1.0, 'total_energy': [1.0, 'PerAtomMSELoss']}, 'optimizer_name': 'Adam', 'optimizer_params': {'amsgrad': False, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0}, 'lr_scheduler_name': 'ReduceLROnPlateau', 'lr_scheduler_patience': 50, 'lr_scheduler_factor': 0.5, 'early_stopping_upper_bounds': {'cumulative_wall': 604800.0}, 'early_stopping_lower_bounds': {'LR': 1e-05}, 'early_stopping_patiences': {'validation_loss': 100}, 'metrics_components': [['forces', 'mae'], ['forces', 'mae'], ['total_energy', 'mae'], ['total_energy', 'mae', {'PerAtom': True}]], 'torch_version': '1.11.0+cu113', 'e3nn_version': '0.4.4', 'nequip_version': '0.5.4', 'code_commits': {}, 'device': 'cuda', 'train_on_keys': ['forces', 'total_energy'], 'early_stopping': None, 'early_stopping_kwargs': None, 'lr_scheduler_kwargs': None, 'optimizer_kwargs': None, 'max_gradient_norm': inf, 'exclude_keys': [], 'dataloader_num_workers': 0, 'train_idcs': None, 'val_idcs': None, 'init_callbacks': [], 'end_of_epoch_callbacks': [], 'end_of_batch_callbacks': [], 'end_of_train_callbacks': [], 'final_callbacks': [], 'save_checkpoint_freq': -1, 'report_init_validation': True, 'parallel': False}
+Trainset is used.
+Successfully loaded the data set of type ASEDataset(6402)...
+Validset is used.
+Successfully loaded the validation data set of type ASEDataset(810)...
+Using device: cuda
+WARNING: please note that models running on CUDA are usually nondeterministc and that this manifests in the final test errors; for a _more_ deterministic result, please use `--device cpu`
+Loading model... 
+Atomic outputs are scaled by: [N, Si: 1.000000], shifted by [N, Si: 0.000000].
+loaded model from training session
+Successfully load the pretrained model...
+Torch device: cuda
+{'_jit_bailout_depth': 2, '_jit_fusion_strategy': [('DYNAMIC', 3)], 'root': '/mnt/yujie.zeng/project_2023/allegro_models/', 'run_name': 'Light-Allegro-3Layer-6rmax_qat_bs8_epoch50', 'wandb': False, 'wandb_project': 'aspirin', 'model_builders': ['allegro.model.Allegro', 'PerSpeciesRescale', 'ForceOutput', 'RescaleEnergyEtc'], 'dataset_statistics_stride': 1, 'default_dtype': 'float32', 'allow_tf32': False, 'verbose': 'info', 'model_debug_mode': False, 'equivariance_test': False, 'grad_anomaly_mode': False, 'append': True, 'taskname': 'qat', 'base_train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0', 'train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-6rmax_qat_bs8_epoch50', 'qat_batch_size': 16, 'repeat': 1, 'quan': {'ptq_batches': 200, 'act': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'weight': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'excepts': {'conv1': {'act': {'bit': 8, 'all_positive': False, 'symmetric': True}, 'weight': {'bit': 8}}, 'fc': {'act': {'bit': 8}, 'weight': {'bit': 8}}, 'linear': {'act': {'bit': 8}, 'weight': {'bit': 8}}}}, 'seed': 123456, 'dataset_seed': 123456, 'r_max': 6.0, 'avg_num_neighbors': 72.66349029541016, 'BesselBasis_trainable': True, 'PolynomialCutoff_p': 6, 'l_max': 2, 'parity': 'o3_restricted', 'num_layers': 3, 'env_embed_multiplicity': 16, 'embed_initial_edge': True, 'two_body_latent_mlp_latent_dimensions': [32, 32, 32, 32], 'two_body_latent_mlp_nonlinearity': 'silu', 'two_body_latent_mlp_initialization': 'uniform', 'latent_mlp_latent_dimensions': [32], 'latent_mlp_nonlinearity': 'silu', 'latent_mlp_initialization': 'uniform', 'latent_resnet': True, 'env_embed_mlp_latent_dimensions': [], 'env_embed_mlp_initialization': 'uniform', 'edge_eng_mlp_latent_dimensions': [32], 'edge_eng_mlp_nonlinearity': None, 'edge_eng_mlp_initialization': 'uniform', 'dataset': 'ase', 'dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Trainset.xyz', 'ase_args': {'format': 'extxyz'}, 'chemical_symbol_to_type': {'N': 0, 'Si': 1}, 'validation_dataset': 'ase', 'validation_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Validset.xyz', 'evaluate_dataset': 'ase', 'evaluate_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Testset.xyz', 'log_batch_freq': 100, 'log_epoch_freq': 1, 'save_checkpoint_freg': -1, 'save_ema_checkpoint_freq': -1, 'n_train': 6402, 'n_val': 810, 'batch_size': 8, 'max_epochs': 300, 'learning_rate': 0.005, 'train_val_split': 'random', 'shuffle': True, 'metrics_key': 'validation_e/N_mae', 'use_ema': True, 'ema_decay': 0.99, 'ema_use_num_updates': True, 'loss_coeffs': {'forces': 1.0, 'total_energy': [1.0, 'PerAtomMSELoss']}, 'optimizer_name': 'Adam', 'optimizer_params': {'amsgrad': False, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0}, 'lr_scheduler_name': 'ReduceLROnPlateau', 'lr_scheduler_patience': 50, 'lr_scheduler_factor': 0.5, 'early_stopping_upper_bounds': {'cumulative_wall': 604800.0}, 'early_stopping_lower_bounds': {'LR': 1e-05}, 'early_stopping_patiences': {'validation_loss': 100}, 'metrics_components': [['forces', 'mae'], ['forces', 'mae'], ['total_energy', 'mae'], ['total_energy', 'mae', {'PerAtom': True}]], 'torch_version': '1.11.0+cu113', 'e3nn_version': '0.4.4', 'nequip_version': '0.5.4', 'code_commits': {}, 'device': 'cuda', 'train_on_keys': ['forces', 'total_energy'], 'early_stopping': None, 'early_stopping_kwargs': None, 'lr_scheduler_kwargs': None, 'optimizer_kwargs': None, 'max_gradient_norm': inf, 'exclude_keys': [], 'dataloader_num_workers': 0, 'train_idcs': None, 'val_idcs': None, 'init_callbacks': [], 'end_of_epoch_callbacks': [], 'end_of_batch_callbacks': [], 'end_of_train_callbacks': [], 'final_callbacks': [], 'save_checkpoint_freq': -1, 'report_init_validation': True, 'parallel': False, 'dataset_extra_fixed_fields': {'r_max': 6.0}, 'validation_dataset_extra_fixed_fields': {'r_max': 6.0}, 'dataset_config': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/config.yaml', 'metrics_config': PosixPath('/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/config.yaml'), 'base_model_file': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/best_model.pth', 'output_fields': []}
+Trainset is used.
+Successfully loaded the data set of type ASEDataset(6402)...
+Validset is used.
+Successfully loaded the validation data set of type ASEDataset(810)...
+Using device: cuda
+WARNING: please note that models running on CUDA are usually nondeterministc and that this manifests in the final test errors; for a _more_ deterministic result, please use `--device cpu`
+Loading model... 
+Atomic outputs are scaled by: [N, Si: 1.000000], shifted by [N, Si: 0.000000].
+loaded model from training session
+Successfully load the pretrained model...
+RescaleOutput(
+  (model): GradientOutput(
+    (func): SequentialGraphNetwork(
+      (one_hot): OneHotAtomEncoding()
+      (radial_basis): RadialBasisEdgeEncoding(
+        (basis): NormalizedBasis(
+          (basis): BesselBasis()
+        )
+        (cutoff): PolynomialCutoff()
+      )
+      (spharm): SphericalHarmonicEdgeAttrs(
+        (sh): SphericalHarmonics()
+      )
+      (allegro): Allegro_Module(
+        (latents): ModuleList(
+          (0): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (1): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (2): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+        )
+        (env_embed_mlps): ModuleList(
+          (0): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (1): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (2): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+        )
+        (tps): ModuleList(
+          (0): RecursiveScriptModule(original_name=GraphModule)
+          (1): RecursiveScriptModule(original_name=GraphModule)
+          (2): RecursiveScriptModule(original_name=GraphModule)
+        )
+        (linears): ModuleList(
+          (0): RecursiveScriptModule(original_name=GraphModule)
+          (1): RecursiveScriptModule(original_name=GraphModule)
+          (2): RecursiveScriptModule(original_name=GraphModule)
+        )
+        (env_linears): ModuleList(
+          (0): Identity()
+          (1): Identity()
+          (2): Identity()
+        )
+        (_env_weighter): MakeWeightedChannels()
+        (final_latent): QuantScalarMLPFunction(
+          (_forward): RecursiveScriptModule(original_name=GraphModule)
+          (quan_w_fn): LsqQuan()
+          (quan_a_fn): LsqQuan()
+          (_qt_forward): RecursiveScriptModule(
+            original_name=GraphModule
+            (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+          )
+        )
+      )
+      (edge_eng): ScalarMLP(
+        (_module): QuantScalarMLPFunction(
+          (_forward): RecursiveScriptModule(original_name=GraphModule)
+          (quan_w_fn): LsqQuan()
+          (quan_a_fn): LsqQuan()
+          (_qt_forward): RecursiveScriptModule(
+            original_name=GraphModule
+            (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+          )
+        )
+      )
+      (edge_eng_sum): EdgewiseEnergySum()
+      (per_species_rescale): PerSpeciesScaleShift()
+      (total_energy_sum): AtomwiseReduce()
+    )
+  )
+)
+Number of weights: 43096
+! Starting training ...
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      0   100         1.72         1.12        0.593         1.54         88.5          1.4
+      0   102         1.97         1.38        0.589         1.74         71.1         1.48
+
+
+  Initialization     #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Initial Validation          0   14.248    0.005         1.18        0.804         1.98         1.51         90.7         1.64
+Wall time: 14.248118792194873
+! Best model        0    1.644
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      1   100        0.438        0.429      0.00873        0.851         14.3        0.163
+      1   200        0.204        0.197      0.00678        0.654         5.69        0.137
+      1   300        0.218        0.218     0.000949        0.649         3.17       0.0482
+      1   400        0.186        0.185     0.000743        0.625         2.53       0.0436
+      1   500        0.162        0.161     0.000138        0.567         1.29       0.0155
+      1   600        0.121        0.118      0.00312        0.508         7.23       0.0913
+      1   700       0.0785       0.0772      0.00134        0.393         4.21       0.0669
+      1   800       0.0673       0.0643      0.00303        0.363         4.67        0.103
+      1   801       0.0994       0.0983      0.00114        0.478         3.01       0.0627
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      1   100        0.112         0.11      0.00215        0.489         6.59       0.0649
+      1   102       0.0863       0.0861     0.000269        0.429         1.09       0.0226
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               1  104.407    0.005        0.192      0.00889        0.201        0.595         7.42        0.122
+! Validation          1  104.407    0.005       0.0897      0.00119       0.0909        0.432         3.29       0.0477
+Wall time: 104.40747856814414
+! Best model        1    0.048
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      2   100         0.13        0.125      0.00459        0.506         6.67        0.118
+      2   200       0.0814       0.0675       0.0139        0.381         8.46        0.211
+      2   300       0.0771       0.0721      0.00506        0.397         7.92         0.13
+      2   400        0.071       0.0698      0.00118        0.378         2.77       0.0647
+      2   500       0.0772       0.0745      0.00272        0.397         4.89       0.0781
+      2   600       0.0607       0.0581      0.00261        0.345         4.31       0.0877
+      2   700       0.0629        0.062     0.000899        0.377         2.45       0.0511
+      2   800       0.0691       0.0684     0.000722         0.39         2.04       0.0443
+      2   801        0.062       0.0618     0.000189        0.368         1.65       0.0255
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      2   100       0.0801       0.0784      0.00162        0.408         4.95       0.0642
+      2   102       0.0654       0.0641      0.00134        0.361         3.25       0.0678
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               2  173.050    0.005       0.0805      0.00398       0.0845        0.403         5.44       0.0905
+! Validation          2  173.050    0.005       0.0609      0.00169       0.0625        0.356         4.09       0.0708
+Wall time: 173.05049617402256
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      3   100        0.072       0.0706      0.00149        0.396         8.71       0.0667
+      3   200       0.0738       0.0731     0.000713        0.375         2.97       0.0456
+      3   300       0.0448       0.0445     0.000264        0.287         1.29       0.0279
+      3   400       0.0499       0.0489     0.000986         0.32         2.32       0.0449
+      3   500       0.0502         0.05     0.000244        0.328         1.24        0.026
+      3   600       0.0853        0.083      0.00235        0.412         4.75       0.0831
+      3   700       0.0808       0.0803     0.000514        0.392         4.15       0.0383
+      3   800       0.0534       0.0523      0.00113        0.336         2.54       0.0501
+      3   801       0.0474       0.0468     0.000538        0.325         2.02       0.0421
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      3   100       0.0668       0.0654      0.00142        0.375         5.48       0.0541
+      3   102       0.0579       0.0578     7.35e-05        0.341        0.777       0.0162
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               3  243.600    0.005       0.0601      0.00207       0.0622        0.351         4.09       0.0669
+! Validation          3  243.600    0.005        0.052     0.000809       0.0528        0.331         2.46       0.0407
+Wall time: 243.6005401420407
+! Best model        3    0.041
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      4   100       0.0591        0.059      0.00012        0.361         1.23       0.0172
+      4   200       0.0555       0.0549     0.000602        0.323         2.61       0.0393
+      4   300       0.0636       0.0606      0.00299        0.355         6.43        0.103
+      4   400       0.0587       0.0584     0.000326         0.35         3.57       0.0313
+      4   500       0.0322       0.0321     0.000185        0.249        0.888       0.0206
+      4   600       0.0558       0.0557     0.000156        0.345        0.991       0.0203
+      4   700       0.0637       0.0598      0.00398        0.357         6.62        0.117
+      4   800       0.0577       0.0565      0.00118        0.341         2.48       0.0448
+      4   801       0.0478       0.0463      0.00147        0.329         3.17       0.0659
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      4   100       0.0645       0.0632      0.00136        0.366         5.47       0.0547
+      4   102       0.0549       0.0548     7.68e-05        0.344        0.647       0.0135
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               4  314.508    0.005       0.0573      0.00216       0.0595        0.344         4.04       0.0654
+! Validation          4  314.508    0.005        0.055     0.000758       0.0557        0.336         2.47       0.0393
+Wall time: 314.50791517901234
+! Best model        4    0.039
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      5   100       0.0543       0.0527      0.00163        0.321         3.16         0.07
+      5   200       0.0573       0.0566     0.000774        0.352         1.73       0.0403
+      5   300       0.0645       0.0628      0.00174        0.358         4.55       0.0593
+      5   400       0.0409       0.0406     0.000309        0.288        0.818        0.025
+      5   500       0.0718        0.067       0.0048        0.376         11.6        0.127
+      5   600        0.047       0.0461     0.000813        0.314         2.91        0.046
+      5   700       0.0366       0.0358     0.000765        0.276         1.87       0.0494
+      5   800       0.0596        0.059     0.000673         0.36         3.35       0.0439
+      5   801       0.0356       0.0349     0.000734        0.274         2.37       0.0495
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      5   100       0.0625       0.0613      0.00124        0.363         5.32       0.0547
+      5   102       0.0542       0.0537     0.000464        0.343         1.76       0.0367
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               5  386.237    0.005       0.0604       0.0026        0.063         0.35         4.24       0.0704
+! Validation          5  386.237    0.005       0.0502     0.000714        0.051        0.327         2.36       0.0392
+Wall time: 386.23745583416894
+! Best model        5    0.039
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      6   100       0.0827       0.0772      0.00542        0.411         10.9        0.138
+      6   200        0.061       0.0585      0.00244        0.339         5.52       0.0916
+      6   300       0.0338       0.0326      0.00123        0.249         2.38        0.065
+      6   400       0.0555       0.0542      0.00129        0.337         3.22       0.0595
+      6   500       0.0626       0.0623     0.000293        0.349         1.17       0.0207
+      6   600        0.038       0.0378     0.000146        0.283        0.883       0.0197
+      6   700        0.035       0.0348     0.000194        0.273         1.24       0.0239
+      6   800        0.043        0.042        0.001        0.288         3.69       0.0561
+      6   801        0.098       0.0966      0.00143        0.423         7.16       0.0682
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      6   100       0.0565       0.0557      0.00083        0.342         3.47       0.0365
+      6   102       0.0529       0.0528     5.75e-05        0.333        0.696       0.0145
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               6  457.800    0.005       0.0497       0.0013        0.051        0.318         3.13       0.0513
+! Validation          6  457.800    0.005       0.0419     0.000417       0.0423        0.296         1.72       0.0252
+Wall time: 457.80057187913917
+! Best model        6    0.025
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      7   100       0.0413       0.0399       0.0014        0.289         2.04       0.0595
+      7   200       0.0465       0.0451      0.00148        0.306         3.56       0.0695
+      7   300       0.0501       0.0496     0.000504        0.326         3.59       0.0365
+      7   400       0.0443       0.0429      0.00137        0.302         3.91       0.0697
+      7   500       0.0521        0.052     0.000111        0.325         1.06       0.0189
+      7   600       0.0564       0.0522      0.00425        0.319         7.37        0.103
+      7   700       0.0538       0.0532     0.000581        0.321         4.39       0.0437
+      7   800        0.052       0.0519     7.46e-05        0.335         1.39       0.0139
+      7   801       0.0399       0.0395     0.000409        0.276         1.53       0.0369
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      7   100        0.054       0.0523      0.00173        0.334         6.16       0.0692
+      7   102       0.0444       0.0438     0.000604        0.306         2.25       0.0469
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               7  529.525    0.005       0.0467      0.00112       0.0478        0.306         2.98       0.0485
+! Validation          7  529.525    0.005       0.0437     0.000888       0.0446        0.302         3.11       0.0477
+Wall time: 529.5253956581
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      8   100         0.06       0.0586      0.00142        0.359         2.96       0.0561
+      8   200       0.0522       0.0519     0.000374        0.337         2.01       0.0307
+      8   300       0.0379       0.0377     0.000166        0.274         1.43       0.0223
+      8   400       0.0579       0.0538      0.00409        0.342         7.07        0.119
+      8   500       0.0507         0.05     0.000678        0.318         2.54       0.0409
+      8   600       0.0444       0.0439     0.000534        0.302         2.44       0.0387
+      8   700       0.0586       0.0553       0.0033         0.32         5.67        0.109
+      8   800       0.0269       0.0266     0.000281        0.239        0.775       0.0221
+      8   801        0.025       0.0247      0.00036        0.234         1.76       0.0366
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      8   100       0.0617       0.0577      0.00404        0.352         9.32        0.117
+      8   102       0.0638       0.0613      0.00244        0.361         4.53       0.0943
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               8  600.225    0.005       0.0441      0.00129       0.0454        0.299         3.28       0.0534
+! Validation          8  600.225    0.005       0.0474      0.00321       0.0506        0.317         6.52        0.105
+Wall time: 600.2254179071169
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      9   100       0.0327       0.0324     0.000227        0.265         1.46       0.0254
+      9   200       0.0511        0.051     0.000158        0.325         2.74       0.0201
+      9   300       0.0408       0.0407     9.89e-05        0.294         1.37       0.0145
+      9   400       0.0162       0.0157     0.000512        0.174         2.55       0.0373
+      9   500       0.0408       0.0398      0.00104        0.289         3.26       0.0472
+      9   600       0.0322       0.0306      0.00157         0.24         4.73       0.0757
+      9   700       0.0491       0.0482     0.000948        0.306         1.62        0.046
+      9   800       0.0426        0.042      0.00053        0.296         2.39       0.0415
+      9   801       0.0367       0.0366     0.000163        0.282        0.986       0.0205
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      9   100       0.0535       0.0502      0.00326        0.329         8.28        0.107
+      9   102        0.055        0.053      0.00209         0.33         4.23       0.0881
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train               9  670.962    0.005       0.0407     0.000913       0.0417        0.289         2.73       0.0447
+! Validation          9  670.962    0.005        0.041      0.00341       0.0444        0.291         6.43        0.106
+Wall time: 670.9622565330938
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     10   100       0.0383       0.0381     0.000188        0.273         1.16       0.0202
+     10   200       0.0543       0.0513      0.00297        0.325         8.26       0.0968
+     10   300       0.0447       0.0436      0.00107        0.304          4.9       0.0506
+     10   400       0.0215       0.0213     0.000172        0.212         1.84       0.0225
+     10   500       0.0417        0.041     0.000673        0.294         1.76       0.0379
+     10   600       0.0511       0.0492       0.0019        0.302         6.16       0.0823
+     10   700       0.0421       0.0411      0.00093        0.293          2.8       0.0568
+     10   800       0.0388       0.0375      0.00129        0.277         3.23       0.0675
+     10   801       0.0357       0.0356     0.000123        0.283         1.41        0.021
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     10   100        0.049       0.0483      0.00062        0.324         3.24       0.0325
+     10   102       0.0478       0.0476     0.000189        0.311         1.26       0.0263
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              10  742.789    0.005       0.0396      0.00116       0.0407        0.285         3.05       0.0498
+! Validation         10  742.789    0.005       0.0393     0.000337       0.0396        0.286          1.5       0.0232
+Wall time: 742.7895002812147
+! Best model       10    0.023
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     11   100       0.0485       0.0463      0.00216        0.306         3.23        0.064
+     11   200       0.0261        0.025      0.00102        0.228         1.81       0.0513
+     11   300       0.0437       0.0418      0.00185        0.293         3.58       0.0787
+     11   400       0.0437       0.0427     0.000972        0.309         1.89        0.051
+     11   500       0.0414       0.0412      0.00024        0.288         1.58       0.0268
+     11   600        0.052       0.0515     0.000472        0.328         1.87       0.0343
+     11   700       0.0347       0.0345     0.000217        0.265         1.22       0.0244
+     11   800       0.0329       0.0328     0.000128        0.259         1.19       0.0205
+     11   801       0.0203       0.0202     6.95e-05        0.213         0.77       0.0161
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     11   100       0.0479       0.0459      0.00195        0.315         4.65       0.0798
+     11   102       0.0393       0.0368      0.00248        0.285         4.59       0.0957
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              11  814.413    0.005       0.0394     0.000914       0.0403        0.282         2.75       0.0448
+! Validation         11  814.413    0.005       0.0372      0.00274       0.0399        0.278         5.47       0.0968
+Wall time: 814.413758370094
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     12   100       0.0416       0.0414     0.000174        0.282         1.06       0.0196
+     12   200       0.0375       0.0373     0.000274        0.286         1.56       0.0298
+     12   300       0.0261       0.0258     0.000257        0.225         1.19       0.0261
+     12   400       0.0251       0.0247     0.000459        0.228         1.14        0.032
+     12   500       0.0333        0.033     0.000292        0.269         3.04       0.0259
+     12   600       0.0432       0.0428     0.000382        0.285          1.6       0.0346
+     12   700       0.0262       0.0241      0.00211        0.219         3.57       0.0863
+     12   800       0.0509       0.0496      0.00137        0.331         4.09       0.0532
+     12   801       0.0326       0.0315      0.00116        0.265         2.57        0.065
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     12   100       0.0417       0.0414     0.000326        0.299         2.22       0.0285
+     12   102       0.0344       0.0343     0.000114        0.274        0.874       0.0182
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              12  885.955    0.005        0.037     0.000763       0.0378        0.273         2.48       0.0408
+! Validation         12  885.955    0.005        0.033     0.000473       0.0335        0.262         1.96       0.0322
+Wall time: 885.9555413110647
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     13   100       0.0247       0.0244     0.000257        0.229         1.31       0.0283
+     13   200       0.0405       0.0395     0.000932        0.276          1.4       0.0369
+     13   300       0.0311       0.0308     0.000272        0.252         1.27        0.027
+     13   400       0.0261       0.0261     8.08e-05         0.23        0.679       0.0158
+     13   500       0.0411       0.0394      0.00177        0.282         6.78       0.0787
+     13   600       0.0389       0.0355      0.00339        0.271         5.92        0.103
+     13   700       0.0351       0.0348     0.000292         0.26         1.35       0.0243
+     13   800       0.0397       0.0392     0.000505        0.293         1.99       0.0341
+     13   801       0.0592        0.059     0.000207        0.369         2.27        0.026
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     13   100       0.0402       0.0394     0.000777        0.294         3.52       0.0429
+     13   102       0.0362       0.0359     0.000334        0.278         1.52       0.0316
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              13  956.597    0.005       0.0369     0.000879       0.0378        0.274         2.61       0.0431
+! Validation         13  956.597    0.005       0.0314      0.00045       0.0318        0.255         2.08       0.0315
+Wall time: 956.5976925091818
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     14   100       0.0413        0.041     0.000216        0.275         1.64       0.0239
+     14   200       0.0263       0.0261     0.000248        0.231         1.28       0.0235
+     14   300       0.0311       0.0305     0.000603        0.238         1.81        0.044
+     14   400       0.0421       0.0417     0.000384        0.287         2.63       0.0358
+     14   500       0.0212       0.0211     0.000112        0.216        0.754       0.0149
+     14   600       0.0491        0.049      0.00013        0.297         1.31       0.0199
+     14   700       0.0298       0.0296     0.000282        0.244         1.23       0.0288
+     14   800       0.0342       0.0337     0.000452        0.268         1.88       0.0304
+     14   801       0.0238       0.0232     0.000616        0.229          4.6       0.0479
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     14   100       0.0373        0.037     0.000321        0.285         2.17        0.031
+     14   102       0.0362       0.0361     0.000178        0.277         1.19       0.0249
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              14 1029.311    0.005       0.0341     0.000566       0.0347        0.264         2.11       0.0346
+! Validation         14 1029.311    0.005       0.0301     0.000402       0.0305         0.25         1.79       0.0321
+Wall time: 1029.3117774650455
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     15   100       0.0286       0.0273      0.00132        0.216         2.09        0.061
+     15   200       0.0337       0.0334     0.000287        0.265         2.13       0.0273
+     15   300       0.0395       0.0379      0.00167         0.27         5.05       0.0727
+     15   400       0.0236       0.0236     8.18e-05        0.229        0.846       0.0149
+     15   500       0.0336       0.0335     0.000124        0.252         0.82       0.0169
+     15   600       0.0499        0.048      0.00196        0.296         4.36       0.0508
+     15   700       0.0439       0.0429     0.000974        0.284         3.03       0.0508
+     15   800       0.0353       0.0348     0.000544        0.268         2.98       0.0414
+     15   801       0.0145       0.0141     0.000409        0.168          1.4       0.0386
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     15   100       0.0365       0.0361     0.000398         0.28         2.52       0.0305
+     15   102       0.0304       0.0302     0.000205        0.254         1.29       0.0268
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              15 1102.611    0.005       0.0335     0.000712       0.0342         0.26         2.27        0.037
+! Validation         15 1102.611    0.005       0.0285     0.000289       0.0288        0.243         1.63       0.0249
+Wall time: 1102.6116842560004
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     16   100       0.0314       0.0311     0.000331        0.263         2.31        0.031
+     16   200       0.0344       0.0333      0.00117        0.252          4.1       0.0635
+     16   300       0.0323       0.0318     0.000431        0.254          1.7       0.0375
+     16   400       0.0316       0.0309     0.000665        0.255         2.66       0.0293
+     16   500       0.0911        0.089      0.00206        0.443          2.9       0.0727
+     16   600       0.0326       0.0323     0.000283        0.247         1.78       0.0243
+     16   700         0.03       0.0293     0.000724        0.242         2.59        0.048
+     16   800       0.0475        0.047     0.000498        0.321         2.13       0.0406
+     16   801       0.0204       0.0196     0.000739        0.216         1.46       0.0522
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     16   100         0.62        0.583       0.0375         1.11         14.4        0.268
+     16   102        0.771        0.761      0.00994         1.31         8.97        0.187
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              16 1172.740    0.005       0.0395      0.00238       0.0419        0.278            3       0.0495
+! Validation         16 1172.740    0.005        0.635       0.0642        0.699         1.11         17.8        0.368
+Wall time: 1172.7398817359935
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     17   100       0.0578       0.0565      0.00132        0.338         3.05        0.067
+     17   200       0.0301       0.0293     0.000765        0.252         2.26       0.0463
+     17   300       0.0347       0.0342     0.000469         0.27         1.66       0.0384
+     17   400       0.0273       0.0268     0.000505        0.245         2.18        0.042
+     17   500       0.0563       0.0557     0.000561        0.337         3.78       0.0409
+     17   600       0.0303       0.0293     0.000965        0.253         2.05       0.0528
+     17   700       0.0307       0.0283      0.00242        0.246         5.58       0.0892
+     17   800       0.0236        0.023     0.000621         0.22         2.04       0.0436
+     17   801       0.0275       0.0267     0.000827        0.226         2.16        0.051
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     17   100       0.0419       0.0403      0.00168        0.297         5.98       0.0744
+     17   102       0.0298       0.0291     0.000678        0.254         2.42       0.0503
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              17 1242.062    0.005       0.0443      0.00116       0.0455        0.296         2.79        0.047
+! Validation         17 1242.062    0.005       0.0357      0.00116       0.0369        0.274         3.72       0.0601
+Wall time: 1242.0622982231434
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     18   100       0.0306       0.0289      0.00163        0.246         3.67       0.0762
+     18   200       0.0324       0.0318     0.000577        0.268         2.18       0.0396
+     18   300       0.0406       0.0372      0.00338        0.285          5.6        0.109
+     18   400       0.0291       0.0289     0.000209        0.239         1.28       0.0227
+     18   500       0.0224       0.0223     0.000112        0.217         1.58       0.0192
+     18   600       0.0328       0.0321     0.000742        0.267         2.63       0.0497
+     18   700       0.0434       0.0431     0.000321        0.308         1.51       0.0313
+     18   800       0.0236       0.0235     0.000105        0.212        0.647       0.0158
+     18   801       0.0202       0.0201      0.00012        0.198        0.828       0.0197
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     18   100       0.0452       0.0445     0.000723        0.313         3.56       0.0465
+     18   102       0.0391       0.0387     0.000366        0.288         1.71       0.0356
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              18 1313.217    0.005       0.0377      0.00087       0.0386        0.273         2.66       0.0438
+! Validation         18 1313.217    0.005       0.0336     0.000476       0.0341        0.266         2.29       0.0355
+Wall time: 1313.217084206175
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     19   100       0.0409       0.0401     0.000855        0.285         3.65        0.054
+     19   200       0.0221        0.021      0.00104        0.202          3.4       0.0616
+     19   300       0.0346       0.0328      0.00183        0.263         3.56       0.0802
+     19   400       0.0163       0.0157     0.000593        0.166         1.42        0.034
+     19   500       0.0488       0.0486     0.000197        0.324         1.41       0.0227
+     19   600       0.0379       0.0375     0.000339        0.282         3.76       0.0294
+     19   700       0.0278       0.0277     9.71e-05        0.238         0.91       0.0177
+     19   800       0.0351       0.0348     0.000318         0.26         2.04       0.0226
+     19   801        0.044        0.044     2.06e-05        0.299        0.716      0.00819
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     19   100       0.0362       0.0356     0.000552        0.279            3       0.0395
+     19   102         0.03       0.0299     0.000112         0.26         0.94       0.0196
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              19 1384.647    0.005       0.0334     0.000638        0.034         0.26         2.26       0.0372
+! Validation         19 1384.647    0.005       0.0281     0.000389       0.0285        0.241         1.98       0.0316
+Wall time: 1384.6470506892074
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     20   100       0.0299       0.0288      0.00115        0.247         3.94       0.0605
+     20   200       0.0272       0.0258      0.00138        0.224         3.21       0.0692
+     20   300       0.0184       0.0182     0.000212         0.19         1.88       0.0251
+     20   400       0.0209       0.0206     0.000334        0.199         1.23       0.0308
+     20   500       0.0321       0.0319     0.000245        0.244         1.18       0.0266
+     20   600        0.036       0.0358     0.000164        0.271         1.91       0.0227
+     20   700       0.0349       0.0347     0.000167        0.267        0.829       0.0192
+     20   800        0.055       0.0548     0.000121        0.333         1.16       0.0157
+     20   801       0.0621       0.0609      0.00119        0.359         12.4       0.0651
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     20   100       0.0343        0.034     0.000288        0.273         2.17       0.0297
+     20   102       0.0285       0.0279     0.000594         0.25         2.24       0.0467
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              20 1456.468    0.005       0.0322     0.000624       0.0328        0.256         2.28       0.0373
+! Validation         20 1456.468    0.005       0.0283     0.000433       0.0287        0.242         2.17       0.0343
+Wall time: 1456.4679381072056
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     21   100       0.0507       0.0492      0.00152        0.315         4.13        0.071
+     21   200       0.0265       0.0264     9.58e-05        0.244        0.673       0.0143
+     21   300       0.0431       0.0422     0.000839        0.272         2.19        0.049
+     21   400       0.0332       0.0329     0.000323        0.273         1.84       0.0294
+     21   500       0.0365       0.0362     0.000328         0.27         1.81       0.0267
+     21   600       0.0252       0.0243     0.000834        0.225          2.8       0.0527
+     21   700       0.0257       0.0254     0.000368        0.233         2.68       0.0346
+     21   800       0.0407       0.0407     3.13e-05        0.302        0.554       0.0091
+     21   801       0.0204       0.0196     0.000786         0.19         1.43       0.0512
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     21   100       0.0342        0.034     0.000211        0.274         2.02        0.022
+     21   102       0.0276       0.0276      6.6e-06        0.249        0.174      0.00362
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              21 1528.887    0.005       0.0348     0.000835       0.0356        0.265          2.6       0.0431
+! Validation         21 1528.887    0.005       0.0276     0.000243       0.0278        0.239         1.39       0.0231
+Wall time: 1528.887817257084
+! Best model       21    0.023
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     22   100       0.0284       0.0282     0.000158        0.247         1.07       0.0233
+     22   200       0.0391       0.0384     0.000681        0.279         3.01       0.0457
+     22   300       0.0203       0.0203     1.66e-05        0.202        0.389      0.00622
+     22   400       0.0384       0.0375     0.000938        0.266         3.89       0.0525
+     22   500       0.0335       0.0326     0.000915        0.271         6.02       0.0582
+     22   600       0.0251        0.025     0.000128        0.225        0.963       0.0168
+     22   700       0.0305       0.0299      0.00063        0.243         2.86        0.037
+     22   800       0.0336       0.0331     0.000554        0.247          3.1        0.037
+     22   801       0.0349       0.0347     0.000212        0.284         1.34       0.0278
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     22   100       0.0364       0.0361     0.000238         0.28         2.04       0.0226
+     22   102       0.0331       0.0331     3.56e-05        0.262        0.491       0.0102
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              22 1647.887    0.005       0.0336      0.00112       0.0348        0.261         2.66       0.0443
+! Validation         22 1647.887    0.005       0.0295     0.000199       0.0297        0.247         1.14       0.0194
+Wall time: 1647.887046206044
+! Best model       22    0.019
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     23   100       0.0524       0.0522     0.000182        0.327         1.45       0.0201
+     23   200       0.0239       0.0238     7.97e-05        0.225        0.733       0.0157
+     23   300       0.0364       0.0363     9.85e-05        0.282         1.18       0.0145
+     23   400       0.0447       0.0444      0.00035        0.292         2.34       0.0284
+     23   500       0.0313        0.031     0.000311         0.25         1.76       0.0273
+     23   600       0.0303       0.0294      0.00087        0.249          5.6       0.0526
+     23   700        0.032       0.0319     0.000128        0.269        0.989       0.0188
+     23   800       0.0396       0.0394     0.000246        0.288         1.49       0.0246
+     23   801       0.0117       0.0113     0.000402        0.146          1.4       0.0383
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     23   100       0.0329       0.0327     0.000151        0.268         1.63       0.0174
+     23   102       0.0269       0.0268     9.14e-06        0.246         0.25      0.00521
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              23 1718.515    0.005       0.0313     0.000523       0.0319        0.253         2.04       0.0336
+! Validation         23 1718.515    0.005       0.0269     0.000137       0.0271        0.235        0.978        0.016
+Wall time: 1718.5150857421104
+! Best model       23    0.016
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     24   100        0.028       0.0279     0.000104         0.24        0.844       0.0144
+     24   200       0.0328       0.0295      0.00333        0.247         6.28         0.11
+     24   300       0.0459       0.0435      0.00234        0.287         4.08       0.0426
+     24   400       0.0205       0.0199     0.000625        0.203         2.48       0.0438
+     24   500       0.0335       0.0333     0.000217        0.259          1.3       0.0241
+     24   600       0.0371        0.037     7.06e-05        0.276        0.583       0.0127
+     24   700        0.024       0.0239      9.5e-05        0.228        0.719        0.015
+     24   800       0.0292       0.0291     0.000108        0.252         1.15       0.0186
+     24   801       0.0231       0.0228     0.000361        0.204         1.29       0.0276
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     24   100       0.0338       0.0336     0.000167        0.272         1.51       0.0164
+     24   102       0.0276       0.0276     2.31e-05         0.25        0.383      0.00797
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              24 1789.950    0.005       0.0311     0.000719       0.0319        0.252         2.35       0.0386
+! Validation         24 1789.950    0.005       0.0273     0.000108       0.0275        0.237        0.865       0.0133
+Wall time: 1789.950711106183
+! Best model       24    0.013
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     25   100       0.0493       0.0486     0.000656        0.268         3.28       0.0435
+     25   200       0.0388       0.0381     0.000627        0.281         2.75       0.0438
+     25   300       0.0319       0.0313     0.000608        0.242         2.22       0.0431
+     25   400       0.0261       0.0255      0.00061        0.231          2.1       0.0414
+     25   500       0.0269       0.0268     5.94e-05        0.226        0.726       0.0113
+     25   600       0.0631       0.0627     0.000354        0.363         3.04       0.0214
+     25   700       0.0333        0.033     0.000356        0.254         1.85       0.0329
+     25   800       0.0399       0.0396      0.00031        0.268         1.94       0.0311
+     25   801       0.0345       0.0341     0.000343        0.268         2.77       0.0277
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     25   100       0.0607       0.0511      0.00955        0.332         13.2        0.187
+     25   102       0.0482       0.0375       0.0107        0.293         9.51        0.198
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              25 1860.950    0.005       0.0327     0.000747       0.0335        0.259         2.38       0.0395
+! Validation         25 1860.950    0.005       0.0426       0.0129       0.0555        0.298         12.6        0.214
+Wall time: 1860.9501496711746
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     26   100       0.0373       0.0372     0.000102        0.273        0.666       0.0141
+     26   200       0.0389       0.0376      0.00131         0.28         2.95       0.0667
+     26   300       0.0414       0.0403      0.00104        0.274         4.42       0.0586
+     26   400       0.0168       0.0165     0.000215        0.178         1.46       0.0251
+     26   500       0.0382        0.038     0.000191        0.278        0.814       0.0217
+     26   600       0.0412       0.0405     0.000674        0.286         3.26       0.0459
+     26   700       0.0415       0.0413     0.000195        0.274         1.99       0.0245
+     26   800       0.0333       0.0332     0.000166        0.256        0.861       0.0199
+     26   801       0.0235       0.0207      0.00281        0.206         6.28        0.102
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     26   100       0.0361        0.035      0.00113         0.28         4.64       0.0623
+     26   102        0.026       0.0254     0.000615        0.234         2.25       0.0468
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              26 1931.565    0.005       0.0355      0.00071       0.0362        0.262         2.32       0.0379
+! Validation         26 1931.565    0.005       0.0303     0.000742       0.0311        0.251         2.95       0.0464
+Wall time: 1931.5652092969976
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     27   100       0.0198       0.0194     0.000408        0.198         2.01       0.0345
+     27   200       0.0298       0.0292     0.000616        0.245         1.35       0.0321
+     27   300       0.0273        0.027     0.000273        0.241         2.03       0.0291
+     27   400        0.033       0.0329      7.5e-05        0.256        0.691       0.0148
+     27   500       0.0206       0.0205     0.000127        0.202         0.63       0.0161
+     27   600       0.0371       0.0367     0.000422        0.285         5.77       0.0371
+     27   700       0.0169       0.0166     0.000278         0.18         1.32       0.0283
+     27   800       0.0212       0.0207     0.000527        0.201         1.41       0.0379
+     27   801       0.0904       0.0897     0.000733        0.423         4.06        0.041
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     27   100       0.0363       0.0358     0.000568        0.278         3.71       0.0334
+     27   102       0.0264       0.0263     7.16e-05        0.238        0.745       0.0155
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              27 2003.077    0.005       0.0313     0.000816       0.0321        0.248         2.31       0.0381
+! Validation         27 2003.077    0.005       0.0292     0.000323       0.0295        0.243         1.61       0.0242
+Wall time: 2003.0777018631343
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     28   100       0.0343       0.0334     0.000859        0.259         2.52       0.0498
+     28   200       0.0337       0.0334       0.0003        0.271         1.55       0.0272
+     28   300       0.0362        0.036     0.000191        0.269         1.33       0.0256
+     28   400       0.0246        0.024     0.000602        0.232          2.7       0.0412
+     28   500       0.0253       0.0251     0.000176        0.227        0.983       0.0222
+     28   600       0.0308       0.0306      0.00016        0.253         1.59       0.0211
+     28   700       0.0266       0.0264      0.00025         0.23         1.34       0.0258
+     28   800       0.0492       0.0486      0.00059        0.274         2.41       0.0276
+     28   801       0.0192       0.0187     0.000573        0.206         3.58       0.0462
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     28   100       0.0332       0.0321      0.00111        0.266         4.72       0.0603
+     28   102        0.031       0.0306     0.000399        0.255          1.8       0.0376
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              28 2121.328    0.005       0.0324     0.000849       0.0332        0.255         2.44       0.0402
+! Validation         28 2121.328    0.005       0.0266     0.000884       0.0275        0.234         3.19       0.0513
+Wall time: 2121.3285959220957
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     29   100       0.0391       0.0386     0.000516        0.291          2.6        0.041
+     29   200         0.02       0.0196     0.000359        0.197         1.46       0.0337
+     29   300         0.07       0.0633       0.0067        0.289         7.96        0.155
+     29   400       0.0299       0.0294     0.000435        0.252         1.73       0.0362
+     29   500       0.0177       0.0176     0.000103        0.186        0.718       0.0168
+     29   600       0.0261        0.026     0.000127        0.243         1.04       0.0166
+     29   700       0.0312        0.031      0.00021        0.258         1.19       0.0235
+     29   800       0.0322       0.0317     0.000583        0.241         2.28       0.0455
+     29   801       0.0388       0.0386      0.00021        0.283         2.09        0.027
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     29   100        0.033       0.0328     0.000212         0.27         1.99       0.0229
+     29   102       0.0307       0.0306     6.84e-05        0.254        0.742       0.0154
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              29 2194.370    0.005       0.0317     0.000744       0.0324        0.253         2.36       0.0398
+! Validation         29 2194.370    0.005       0.0275     0.000182       0.0277         0.24         1.27       0.0191
+Wall time: 2194.3698903222103
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     30   100       0.0341       0.0333     0.000799        0.259         3.09       0.0531
+     30   200       0.0385       0.0384     0.000166        0.271         1.17         0.02
+     30   300       0.0338       0.0332     0.000546        0.258         3.18       0.0392
+     30   400       0.0406       0.0331      0.00756        0.266          9.2        0.166
+     30   500       0.0394       0.0381      0.00136        0.279            4       0.0703
+     30   600       0.0305       0.0304     0.000126        0.252          0.9       0.0165
+     30   700       0.0504       0.0488      0.00165        0.292          4.1       0.0461
+     30   800       0.0286       0.0284     0.000131        0.245         1.05       0.0191
+     30   801       0.0485       0.0483     0.000161        0.306        0.899       0.0209
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     30   100       0.0374       0.0372       0.0002        0.286         1.75       0.0168
+     30   102       0.0252       0.0252     2.44e-06        0.238        0.133      0.00277
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              30 2269.373    0.005        0.033     0.000829       0.0338        0.254         2.19       0.0361
+! Validation         30 2269.373    0.005        0.031     0.000142       0.0312        0.254         0.99       0.0157
+Wall time: 2269.373357946053
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     31   100       0.0233       0.0232     0.000163        0.227         1.71       0.0228
+     31   200       0.0279       0.0272     0.000701        0.246         3.09       0.0463
+     31   300       0.0266       0.0256      0.00105        0.239          3.2       0.0596
+     31   400       0.0143       0.0141     0.000145        0.172        0.826       0.0199
+     31   500       0.0252        0.025     0.000141        0.223        0.819       0.0201
+     31   600       0.0243       0.0243     5.85e-05        0.217        0.666       0.0118
+     31   700       0.0286       0.0285     0.000103        0.245          1.1       0.0177
+     31   800       0.0223       0.0219     0.000387        0.201         1.33       0.0348
+     31   801       0.0368       0.0367     8.09e-05        0.286        0.789       0.0164
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     31   100        0.033       0.0317      0.00133        0.264          4.9       0.0688
+     31   102       0.0272       0.0265     0.000716        0.246         2.46       0.0513
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              31 2342.792    0.005       0.0291     0.000422       0.0295        0.243         1.82       0.0297
+! Validation         31 2342.792    0.005        0.026      0.00101        0.027        0.232         3.53       0.0587
+Wall time: 2342.7925328891724
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     32   100       0.0335        0.033     0.000551        0.256         2.29       0.0282
+     32   200       0.0279       0.0278     9.72e-05        0.214         1.12       0.0137
+     32   300       0.0308       0.0299     0.000843        0.247         2.85        0.054
+     32   400        0.026       0.0258     0.000203         0.23        0.938       0.0238
+     32   500       0.0164       0.0156     0.000779        0.181         2.42       0.0527
+     32   600       0.0304         0.03     0.000469        0.245         2.07       0.0413
+     32   700       0.0283       0.0277     0.000591        0.231         2.36       0.0438
+     32   800        0.058       0.0562      0.00182        0.306         5.04       0.0798
+     32   801       0.0252       0.0242      0.00105        0.234         2.96       0.0617
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     32   100       0.0363       0.0362     0.000147        0.286         1.49       0.0195
+     32   102         0.03         0.03     2.35e-05        0.254        0.432        0.009
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              32 2414.939    0.005       0.0298     0.000501       0.0303        0.245         2.04       0.0334
+! Validation         32 2414.939    0.005       0.0291     0.000143       0.0292        0.247         1.05       0.0168
+Wall time: 2414.939418230206
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     33   100       0.0377       0.0348      0.00291        0.268         5.17        0.101
+     33   200       0.0315       0.0308     0.000631        0.256         2.89       0.0461
+     33   300        0.023       0.0228     0.000189        0.215         1.04       0.0218
+     33   400       0.0354       0.0348      0.00053        0.266         4.38       0.0382
+     33   500       0.0308       0.0305     0.000218        0.236          1.2       0.0239
+     33   600       0.0318       0.0318     3.47e-05        0.254         0.59      0.00859
+     33   700       0.0293       0.0289     0.000442        0.251         2.43       0.0384
+     33   800       0.0364        0.036     0.000396        0.272         1.04       0.0278
+     33   801       0.0437       0.0429     0.000768        0.313         4.33       0.0524
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     33   100       0.0344       0.0336     0.000815        0.274         3.96       0.0518
+     33   102       0.0281       0.0278     0.000254        0.251         1.48       0.0308
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              33 2488.248    0.005       0.0308     0.000657       0.0315         0.25         2.34       0.0384
+! Validation         33 2488.248    0.005       0.0284     0.000738       0.0291        0.242         2.74       0.0459
+Wall time: 2488.2484549211804
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     34   100       0.0334       0.0331      0.00031        0.262         2.07       0.0302
+     34   200       0.0238       0.0236     0.000222         0.23         1.11       0.0249
+     34   300       0.0232       0.0231     0.000125        0.216        0.906        0.016
+     34   400       0.0377       0.0372     0.000495        0.283         2.16       0.0371
+     34   500       0.0358       0.0353     0.000477        0.267          2.3        0.036
+     34   600       0.0273       0.0272     0.000148        0.232         1.13       0.0205
+     34   700       0.0228       0.0226     0.000129        0.204        0.999       0.0192
+     34   800       0.0703       0.0595       0.0109        0.312         11.5        0.191
+     34   801       0.0439       0.0408      0.00305        0.298         11.2        0.107
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     34   100       0.0326       0.0321     0.000448        0.268         2.76       0.0331
+     34   102       0.0245       0.0245     3.64e-05        0.235         0.49       0.0102
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              34 2561.669    0.005       0.0299     0.000901       0.0308        0.247         2.47       0.0415
+! Validation         34 2561.669    0.005       0.0269     0.000387       0.0273        0.235         1.71        0.029
+Wall time: 2561.6697845452
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     35   100       0.0422       0.0415     0.000674        0.281         2.71       0.0452
+     35   200        0.031       0.0308     0.000187        0.255         1.36       0.0251
+     35   300        0.017       0.0168      0.00012        0.185        0.709       0.0183
+     35   400       0.0285       0.0284     8.93e-05        0.246        0.887        0.015
+     35   500       0.0305       0.0298     0.000638        0.256         2.03       0.0432
+     35   600       0.0366       0.0354      0.00123        0.258         3.66       0.0649
+     35   700       0.0465       0.0463     0.000172        0.271         1.46       0.0226
+     35   800       0.0268       0.0263     0.000491        0.231         2.58       0.0423
+     35   801       0.0191        0.019     9.62e-05          0.2        0.662       0.0185
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     35   100        0.034       0.0336     0.000403        0.273         2.97       0.0321
+     35   102       0.0258       0.0257     0.000107        0.236        0.843       0.0176
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              35 2635.966    0.005       0.0316     0.000755       0.0324        0.253          2.4       0.0396
+! Validation         35 2635.966    0.005       0.0294     0.000252       0.0297        0.249         1.48       0.0226
+Wall time: 2635.9660724231508
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     36   100       0.0497       0.0495     0.000183        0.265          1.3       0.0216
+     36   200       0.0374        0.037     0.000401        0.276         2.12       0.0352
+     36   300       0.0273       0.0271     0.000207         0.24         2.93       0.0262
+     36   400        0.039       0.0365       0.0025        0.271          6.1       0.0957
+     36   500       0.0222       0.0207       0.0015        0.196         3.01        0.071
+     36   600       0.0285       0.0281     0.000363        0.245         2.23       0.0346
+     36   700       0.0316        0.031     0.000575        0.254          2.7       0.0422
+     36   800       0.0198       0.0192     0.000629        0.198         1.98        0.044
+     36   801       0.0294       0.0292     0.000201        0.254         1.32       0.0274
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     36   100        0.033       0.0327     0.000359        0.268         2.32       0.0326
+     36   102       0.0264       0.0263     0.000109        0.246        0.956       0.0199
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              36 2708.203    0.005       0.0292     0.000609       0.0298        0.244          2.2       0.0369
+! Validation         36 2708.203    0.005       0.0264      0.00023       0.0267        0.233         1.53       0.0246
+Wall time: 2708.2033969562035
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     37   100       0.0172        0.017     0.000219        0.187        0.989       0.0237
+     37   200       0.0336       0.0332     0.000405        0.256         1.72       0.0313
+     37   300       0.0257       0.0256     4.51e-05        0.235        0.566       0.0121
+     37   400       0.0284       0.0277      0.00069        0.245          3.6       0.0492
+     37   500       0.0296       0.0288     0.000827        0.257         2.77       0.0518
+     37   600       0.0424       0.0399      0.00244        0.284         6.47       0.0932
+     37   700       0.0458       0.0453     0.000489          0.3          2.7       0.0353
+     37   800       0.0256       0.0256     3.14e-05        0.224        0.566      0.00999
+     37   801       0.0202       0.0198     0.000426        0.189          1.5       0.0398
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     37   100       0.0414       0.0409     0.000493        0.302         2.42       0.0345
+     37   102       0.0402       0.0399      0.00035        0.295         1.57       0.0328
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              37 2778.358    0.005        0.029     0.000635       0.0296        0.239         2.16       0.0357
+! Validation         37 2778.358    0.005       0.0361      0.00083       0.0369        0.273         2.42       0.0455
+Wall time: 2778.358643649146
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     38   100       0.0311       0.0309     0.000187        0.237         1.08       0.0212
+     38   200       0.0172        0.017     0.000221        0.183         2.47       0.0255
+     38   300       0.0178       0.0162       0.0016        0.183         2.81       0.0734
+     38   400       0.0191       0.0186     0.000496        0.195         1.47       0.0375
+     38   500       0.0249       0.0248     9.03e-05         0.23        0.702       0.0148
+     38   600       0.0495        0.048      0.00157        0.265         3.33       0.0448
+     38   700       0.0218       0.0212     0.000636        0.201         2.03       0.0379
+     38   800         0.05       0.0466      0.00344        0.296         5.81       0.0593
+     38   801        0.033        0.033     1.42e-06        0.276          0.1      0.00185
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     38   100       0.0299       0.0298     7.42e-05        0.256         1.03       0.0152
+     38   102       0.0256       0.0255     0.000114        0.238        0.796       0.0166
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              38 2848.624    0.005       0.0286     0.000401        0.029         0.24          1.8       0.0297
+! Validation         38 2848.624    0.005       0.0249     0.000144        0.025        0.226         1.13       0.0185
+Wall time: 2848.6244418991264
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     39   100       0.0214       0.0203      0.00104        0.204         3.94       0.0598
+     39   200       0.0203       0.0201     0.000161        0.205         1.31       0.0216
+     39   300       0.0295       0.0283      0.00121        0.227         2.64       0.0303
+     39   400       0.0237       0.0237     3.11e-05        0.216        0.548      0.00864
+     39   500       0.0268       0.0266     0.000199         0.23         1.56       0.0233
+     39   600       0.0339       0.0337     0.000188        0.258         1.25       0.0222
+     39   700       0.0246        0.024     0.000653         0.22         2.64       0.0462
+     39   800        0.024       0.0238     0.000236        0.219         1.53       0.0275
+     39   801        0.025        0.025     3.09e-05        0.224        0.393      0.00868
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     39   100       0.0282       0.0281     7.65e-05        0.249         1.17       0.0154
+     39   102       0.0211        0.021     7.93e-05        0.221        0.795       0.0166
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              39 2920.617    0.005       0.0265     0.000396       0.0269        0.232          1.8         0.03
+! Validation         39 2920.617    0.005       0.0236     0.000138       0.0238         0.22         1.15       0.0186
+Wall time: 2920.6176580290776
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     40   100       0.0283       0.0272      0.00107        0.242         3.62       0.0565
+     40   200        0.015       0.0147     0.000269        0.179         1.25       0.0291
+     40   300       0.0314       0.0313     0.000108        0.256         2.38       0.0171
+     40   400       0.0279       0.0268      0.00103         0.22         3.26       0.0602
+     40   500       0.0363       0.0361     0.000176        0.278        0.979       0.0194
+     40   600       0.0271        0.027     5.39e-05         0.24        0.761        0.012
+     40   700       0.0296       0.0292     0.000391        0.228         1.56       0.0362
+     40   800       0.0282       0.0281     9.17e-05        0.241        0.977       0.0142
+     40   801       0.0325       0.0319     0.000555        0.262         2.18       0.0455
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     40   100       0.0296       0.0293     0.000212        0.256         1.83       0.0211
+     40   102        0.025        0.025     5.21e-05        0.241        0.535       0.0111
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              40 2992.587    0.005       0.0271     0.000463       0.0276        0.234         1.93       0.0321
+! Validation         40 2992.587    0.005       0.0237     0.000151       0.0238        0.219         1.17       0.0164
+Wall time: 2992.587120947195
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     41   100       0.0196       0.0196        7e-05        0.198        0.484       0.0134
+     41   200       0.0287       0.0283     0.000403        0.247         1.12        0.027
+     41   300       0.0368       0.0367     9.66e-05        0.266        0.909        0.017
+     41   400       0.0294       0.0293     0.000112        0.249         1.11       0.0174
+     41   500       0.0219       0.0217     0.000155        0.207        0.669       0.0185
+     41   600       0.0235       0.0227     0.000785        0.215         2.78        0.051
+     41   700       0.0405       0.0403     0.000198        0.274         1.76       0.0253
+     41   800       0.0164       0.0163     7.79e-05        0.176        0.587       0.0128
+     41   801       0.0173       0.0172     6.78e-05        0.194         1.08       0.0158
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     41   100        0.029       0.0286     0.000411        0.249         2.69       0.0373
+     41   102       0.0233       0.0231     0.000166        0.226         1.14       0.0237
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              41 3064.143    0.005       0.0269      0.00049       0.0274        0.234         1.99       0.0328
+! Validation         41 3064.143    0.005       0.0234     0.000351       0.0237        0.217         1.92        0.032
+Wall time: 3064.143807555083
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     42   100       0.0337       0.0333     0.000471        0.258         2.56       0.0367
+     42   200        0.027        0.023      0.00404         0.22         6.25        0.121
+     42   300        0.028        0.025      0.00303        0.225         4.51        0.106
+     42   400       0.0215       0.0203      0.00127        0.205         3.58       0.0674
+     42   500       0.0304       0.0269      0.00348        0.233         6.87        0.114
+     42   600       0.0238        0.023     0.000802        0.212         2.36       0.0516
+     42   700       0.0351       0.0345     0.000613        0.266         1.78       0.0406
+     42   800       0.0477       0.0464      0.00131        0.313         2.74       0.0419
+     42   801       0.0329       0.0329     2.78e-05        0.262        0.765       0.0097
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     42   100       0.0479       0.0469      0.00106        0.325         3.68       0.0446
+     42   102        0.051       0.0509     5.67e-05        0.348        0.647       0.0135
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              42 3135.419    0.005       0.0398       0.0034       0.0432        0.266         3.03       0.0507
+! Validation         42 3135.419    0.005       0.0471      0.00081        0.048        0.313         2.23         0.04
+Wall time: 3135.418909294065
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     43   100       0.0307       0.0297     0.000957        0.247         3.18       0.0437
+     43   200       0.0307       0.0305     0.000114         0.26         1.69       0.0194
+     43   300       0.0279       0.0278     0.000177        0.245         1.44       0.0214
+     43   400       0.0438       0.0423       0.0015        0.287         4.22        0.059
+     43   500       0.0221       0.0219     0.000218        0.215         1.44       0.0257
+     43   600       0.0257       0.0254     0.000275        0.233         1.57       0.0272
+     43   700       0.0352        0.035     0.000144        0.254         2.39       0.0181
+     43   800       0.0241        0.024     0.000145        0.215        0.679        0.015
+     43   801       0.0435       0.0428     0.000715        0.307         2.48       0.0517
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     43   100       0.0322       0.0318     0.000418        0.266         2.34       0.0326
+     43   102        0.024       0.0239     0.000145        0.234        0.931       0.0194
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              43 3206.885    0.005       0.0307     0.000558       0.0312         0.25          2.1       0.0347
+! Validation         43 3206.885    0.005       0.0261     0.000274       0.0264        0.233         1.55       0.0255
+Wall time: 3206.885413953103
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     44   100       0.0297       0.0295     0.000169         0.25         1.38       0.0195
+     44   200       0.0279       0.0277     0.000182        0.242         1.09       0.0194
+     44   300       0.0314        0.031     0.000388        0.253         2.58       0.0355
+     44   400       0.0255       0.0248     0.000693        0.224         2.34       0.0299
+     44   500       0.0681       0.0559       0.0122         0.36         14.6        0.203
+     44   600       0.0134       0.0133     7.98e-05        0.167        0.667       0.0144
+     44   700       0.0295       0.0282      0.00132        0.242          3.6       0.0672
+     44   800       0.0221       0.0219     0.000156        0.212         1.13       0.0223
+     44   801        0.032       0.0317     0.000272        0.268         2.57       0.0312
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     44   100       0.0331       0.0327     0.000334        0.267          2.3        0.032
+     44   102       0.0264       0.0259     0.000474        0.237         1.97        0.041
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              44 3279.004    0.005       0.0288     0.000841       0.0296        0.242         2.37       0.0392
+! Validation         44 3279.004    0.005       0.0262     0.000553       0.0267        0.232         2.33       0.0407
+Wall time: 3279.0041214150842
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     45   100       0.0245       0.0244     0.000134         0.23        0.904       0.0202
+     45   200        0.027       0.0267     0.000345        0.239         1.34       0.0322
+     45   300       0.0265       0.0264     6.86e-05        0.231        0.832       0.0128
+     45   400       0.0299       0.0291     0.000859        0.226         2.39       0.0542
+     45   500       0.0244       0.0242     0.000266        0.228         1.38       0.0259
+     45   600       0.0335       0.0332     0.000373        0.259         4.01       0.0287
+     45   700       0.0239       0.0237     0.000152        0.224         1.37       0.0166
+     45   800       0.0198       0.0197      4.1e-05        0.211        0.768       0.0108
+     45   801       0.0221       0.0196      0.00253        0.183         3.59       0.0968
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     45   100       0.0308         0.03     0.000872        0.255         3.36       0.0529
+     45   102       0.0268       0.0255      0.00125         0.24         3.21       0.0669
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              45 3350.826    0.005       0.0287     0.000597       0.0293        0.241         2.08       0.0347
+! Validation         45 3350.826    0.005       0.0252      0.00113       0.0263        0.226         3.64        0.062
+Wall time: 3350.826680558035
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     46   100       0.0348       0.0348     6.71e-05        0.267        0.476       0.0112
+     46   200       0.0297       0.0295     0.000183        0.251         1.02       0.0218
+     46   300       0.0433       0.0424     0.000897        0.293         3.26       0.0511
+     46   400       0.0188       0.0187     7.56e-05        0.205        0.845       0.0133
+     46   500       0.0191       0.0187     0.000395        0.195         1.77       0.0362
+     46   600       0.0254       0.0251     0.000334        0.216         1.65       0.0248
+     46   700       0.0284       0.0283     9.48e-05        0.247        0.961       0.0167
+     46   800       0.0293       0.0292     8.81e-05        0.254        0.934       0.0142
+     46   801       0.0118       0.0118     2.01e-05        0.157        0.323      0.00727
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     46   100       0.0303         0.03     0.000287        0.255         2.09       0.0237
+     46   102       0.0229       0.0228      3.3e-05        0.227        0.449      0.00935
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              46 3422.407    0.005       0.0273     0.000384       0.0277        0.235         1.77       0.0288
+! Validation         46 3422.407    0.005       0.0247     0.000153       0.0249        0.224          1.1       0.0169
+Wall time: 3422.4069252230693
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     47   100       0.0508       0.0502     0.000622        0.308         2.49       0.0384
+     47   200       0.0306       0.0305     8.53e-05        0.252        0.954       0.0144
+     47   300       0.0291       0.0287     0.000433        0.238         2.21       0.0391
+     47   400       0.0388       0.0379     0.000855        0.274         3.25       0.0522
+     47   500        0.028       0.0274     0.000597        0.227         3.43       0.0398
+     47   600       0.0278       0.0277     0.000105        0.233        0.893       0.0175
+     47   700       0.0149       0.0142     0.000741        0.164         1.57       0.0469
+     47   800       0.0287       0.0287     4.25e-05        0.237        0.458      0.00912
+     47   801       0.0202       0.0201     0.000108        0.204         1.13       0.0198
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     47   100       0.0289       0.0288     0.000123        0.251         1.51       0.0154
+     47   102       0.0233       0.0232     2.68e-05        0.229        0.464      0.00968
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              47 3493.483    0.005       0.0275     0.000515        0.028        0.235         1.93       0.0322
+! Validation         47 3493.483    0.005       0.0236     0.000101       0.0237        0.219        0.844        0.013
+Wall time: 3493.4828486321494
+! Best model       47    0.013
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     48   100       0.0318       0.0311     0.000693        0.262         3.98       0.0481
+     48   200         0.02       0.0197     0.000382        0.202         1.55       0.0332
+     48   300       0.0204       0.0197     0.000666        0.194         1.52       0.0431
+     48   400       0.0327       0.0326     0.000146        0.261         1.82       0.0206
+     48   500       0.0265       0.0263     0.000131        0.237         1.14         0.02
+     48   600       0.0186       0.0184     0.000138        0.199         1.16       0.0208
+     48   700       0.0424       0.0416     0.000809        0.276         3.22       0.0395
+     48   800       0.0333       0.0328     0.000541        0.256         2.03       0.0425
+     48   801       0.0542       0.0541     0.000138        0.329         1.34       0.0208
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     48   100       0.0278       0.0277     0.000111        0.248         1.21       0.0171
+     48   102       0.0238       0.0238     2.95e-05        0.233        0.437      0.00911
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              48 3564.302    0.005       0.0261     0.000313       0.0264         0.23         1.58       0.0258
+! Validation         48 3564.302    0.005       0.0245     0.000174       0.0247        0.222         1.09       0.0193
+Wall time: 3564.3019585141446
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     49   100       0.0282       0.0281     0.000115        0.238         1.08       0.0172
+     49   200       0.0306       0.0298     0.000876        0.255         3.11       0.0527
+     49   300       0.0238       0.0235     0.000307         0.22         1.67       0.0295
+     49   400       0.0188       0.0183      0.00048        0.194         1.38       0.0358
+     49   500       0.0264       0.0264     4.33e-05        0.226        0.787      0.00976
+     49   600       0.0321        0.032     5.54e-05        0.254        0.809       0.0125
+     49   700       0.0191       0.0189     0.000143        0.192         0.78       0.0201
+     49   800       0.0305       0.0305     2.45e-05        0.255        0.473      0.00758
+     49   801       0.0355       0.0355     1.47e-05        0.275        0.253      0.00527
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     49   100       0.0291       0.0288     0.000298        0.252          2.6       0.0323
+     49   102       0.0227       0.0226     6.43e-05        0.227        0.705       0.0147
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              49 3636.134    0.005       0.0273     0.000501       0.0278        0.237         1.93        0.032
+! Validation         49 3636.134    0.005       0.0254     0.000324       0.0257        0.229         1.94       0.0303
+Wall time: 3636.1342975171283
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     50   100       0.0243       0.0242     7.12e-05        0.224        0.697       0.0126
+     50   200       0.0216       0.0198      0.00182          0.2         5.18       0.0806
+     50   300        0.031       0.0308     0.000125        0.243        0.928       0.0184
+     50   400       0.0209       0.0205     0.000353        0.202         2.04       0.0351
+     50   500       0.0247       0.0247     8.33e-05        0.226        0.895       0.0138
+     50   600       0.0259       0.0258     9.52e-05        0.229        0.661        0.012
+     50   700       0.0233       0.0226     0.000706        0.214         2.46       0.0485
+     50   800       0.0315       0.0311      0.00042         0.25         2.32       0.0344
+     50   801       0.0283        0.027      0.00131        0.231         1.44       0.0505
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     50   100       0.0308       0.0297      0.00105        0.256         4.13       0.0595
+     50   102       0.0247        0.024     0.000779        0.235         2.58       0.0537
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              50 3707.639    0.005       0.0264     0.000548       0.0269        0.232            2       0.0332
+! Validation         50 3707.639    0.005        0.025     0.000861       0.0259        0.227         3.28       0.0533
+Wall time: 3707.6397471250966
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     51   100       0.0317       0.0302      0.00148        0.254         4.41       0.0699
+     51   200       0.0326       0.0325     0.000131        0.252        0.813       0.0176
+     51   300       0.0316       0.0304      0.00116         0.24         2.69        0.062
+     51   400       0.0289       0.0286     0.000289        0.242         1.85       0.0253
+     51   500       0.0175       0.0174     0.000163         0.19         1.09       0.0203
+     51   600       0.0356       0.0343       0.0013        0.264         3.26       0.0654
+     51   700       0.0314       0.0309     0.000432         0.25          1.8       0.0357
+     51   800        0.036       0.0359     0.000153        0.273         1.26       0.0203
+     51   801        0.031        0.031     7.17e-05        0.249         1.64       0.0163
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     51   100       0.0291       0.0285     0.000602        0.249         3.21       0.0414
+     51   102        0.023       0.0228     0.000223         0.23         1.32       0.0276
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              51 3778.297    0.005       0.0277     0.000384       0.0281        0.237         1.76       0.0291
+! Validation         51 3778.297    0.005       0.0239     0.000468       0.0244        0.221         2.19       0.0349
+Wall time: 3778.2977142222226
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     52   100       0.0169       0.0167     0.000202        0.179         1.21       0.0193
+     52   200       0.0346       0.0345     0.000106        0.261        0.872       0.0169
+     52   300       0.0243       0.0224      0.00194        0.198         3.56       0.0839
+     52   400       0.0452       0.0449     0.000267         0.32         1.43       0.0265
+     52   500       0.0248       0.0242     0.000539        0.222         1.69       0.0387
+     52   600        0.023       0.0228     0.000199         0.22         1.32       0.0227
+     52   700       0.0236       0.0233     0.000307         0.22         1.49       0.0297
+     52   800       0.0356       0.0355     9.55e-05        0.272         1.06       0.0166
+     52   801       0.0359       0.0358     0.000108        0.276         1.54       0.0201
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     52   100       0.0299       0.0287      0.00111        0.254         4.46       0.0629
+     52   102         0.02       0.0195     0.000468        0.205         1.99       0.0414
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              52 3851.177    0.005        0.027     0.000892       0.0279        0.233         2.32       0.0385
+! Validation         52 3851.177    0.005       0.0253      0.00107       0.0264        0.228         3.54       0.0599
+Wall time: 3851.1769436970353
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     53   100       0.0326       0.0318     0.000807        0.249         3.61        0.052
+     53   200       0.0273       0.0265     0.000824        0.223         2.49        0.052
+     53   300       0.0346       0.0345     6.43e-05         0.26        0.965       0.0137
+     53   400       0.0328       0.0327     0.000118        0.265         1.26        0.016
+     53   500       0.0178       0.0172     0.000543        0.185         1.96       0.0423
+     53   600       0.0329       0.0328     0.000103        0.261         1.59       0.0177
+     53   700       0.0223       0.0222     0.000106        0.214        0.888       0.0153
+     53   800       0.0384       0.0349      0.00357        0.266         7.55         0.11
+     53   801       0.0227       0.0219     0.000886        0.211         2.15       0.0575
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     53   100        0.031       0.0293      0.00163        0.256         5.24       0.0762
+     53   102       0.0237       0.0226      0.00112        0.227         3.09       0.0644
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              53 3923.075    0.005       0.0259     0.000562       0.0265        0.229          2.1       0.0352
+! Validation         53 3923.075    0.005       0.0239      0.00154       0.0254        0.222         4.32       0.0732
+Wall time: 3923.074910475174
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     54   100       0.0194       0.0192       0.0002        0.196         1.57       0.0243
+     54   200       0.0247       0.0245     0.000161         0.23         1.23       0.0214
+     54   300       0.0227       0.0223     0.000397        0.214         2.08       0.0326
+     54   400       0.0281       0.0256      0.00254        0.239         7.88       0.0967
+     54   500        0.036       0.0352     0.000819        0.279         6.38       0.0493
+     54   600       0.0224       0.0223     8.89e-05        0.212        0.956        0.016
+     54   700        0.019       0.0188     0.000157        0.179        0.973       0.0206
+     54   800       0.0257       0.0255     0.000133        0.233         1.03       0.0182
+     54   801       0.0244       0.0242     0.000185        0.232         1.37       0.0235
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     54   100       0.0327       0.0324     0.000241        0.268         2.21       0.0279
+     54   102       0.0254       0.0251     0.000331         0.24         1.65       0.0344
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              54 3994.922    0.005       0.0259     0.000436       0.0264        0.229         1.88       0.0314
+! Validation         54 3994.922    0.005       0.0253     0.000382       0.0257        0.228         1.93       0.0333
+Wall time: 3994.9227475801017
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     55   100       0.0345       0.0341     0.000369        0.268         4.75       0.0309
+     55   200       0.0112        0.011     0.000132        0.139        0.595       0.0184
+     55   300       0.0426       0.0389      0.00365         0.27          6.2        0.114
+     55   400       0.0262       0.0261     0.000125        0.242         1.39         0.02
+     55   500       0.0269       0.0268      0.00011        0.235        0.984       0.0147
+     55   600       0.0215       0.0212     0.000313        0.209         1.51       0.0321
+     55   700       0.0332       0.0321      0.00117        0.255         6.17       0.0652
+     55   800       0.0353        0.035     0.000292        0.259         1.62       0.0318
+     55   801       0.0137       0.0136     2.38e-05        0.177        0.547      0.00876
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     55   100       0.0292       0.0289     0.000286        0.254         2.14        0.029
+     55   102        0.024       0.0234     0.000544        0.231         2.13       0.0444
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              55 4066.543    0.005       0.0265     0.000504        0.027        0.232         2.05       0.0338
+! Validation         55 4066.543    0.005       0.0243     0.000674        0.025        0.223          2.6       0.0455
+Wall time: 4066.542924385052
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     56   100       0.0331       0.0319      0.00114        0.258         2.96       0.0615
+     56   200       0.0381       0.0377     0.000462        0.287         3.05       0.0394
+     56   300       0.0226       0.0226     4.01e-05        0.215        0.436       0.0106
+     56   400        0.022       0.0216     0.000375        0.209         1.16       0.0305
+     56   500       0.0268       0.0262     0.000586        0.232         2.11       0.0412
+     56   600       0.0343       0.0338      0.00044         0.27         2.45       0.0389
+     56   700        0.024       0.0234     0.000528        0.209         1.89       0.0435
+     56   800        0.027       0.0269      4.9e-05        0.239         1.01       0.0106
+     56   801       0.0109       0.0107     0.000161        0.144        0.534       0.0183
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     56   100       0.0297       0.0295     0.000221        0.254         1.66       0.0213
+     56   102       0.0244       0.0244     4.12e-05        0.238        0.554       0.0115
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              56 4136.875    0.005       0.0266      0.00044       0.0271        0.232         1.88       0.0312
+! Validation         56 4136.875    0.005       0.0243     0.000183       0.0244        0.223         1.16       0.0198
+Wall time: 4136.875126055209
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     57   100       0.0278       0.0277     0.000103        0.245         1.44       0.0178
+     57   200       0.0488       0.0486     0.000178        0.308         1.28       0.0219
+     57   300       0.0216       0.0213     0.000231        0.204         1.54        0.029
+     57   400       0.0163       0.0161      0.00019        0.181        0.939       0.0219
+     57   500       0.0243       0.0234     0.000937        0.217         2.51       0.0587
+     57   600       0.0289       0.0288     0.000116        0.246        0.924       0.0168
+     57   700       0.0325       0.0323     0.000223        0.259         1.66       0.0239
+     57   800       0.0365       0.0363     0.000216        0.273         1.52       0.0237
+     57   801       0.0222        0.022     0.000159         0.22        0.958       0.0235
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     57   100       0.0289       0.0288     0.000119        0.252         1.68       0.0174
+     57   102       0.0212       0.0208     0.000321        0.222         1.66       0.0345
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              57 4207.781    0.005       0.0258     0.000444       0.0262        0.228         1.86       0.0314
+! Validation         57 4207.781    0.005        0.026     0.000237       0.0263         0.23         1.67       0.0255
+Wall time: 4207.781231632223
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     58   100       0.0302       0.0292      0.00109        0.232         4.09       0.0613
+     58   200       0.0311        0.031     7.67e-05        0.243         1.04       0.0139
+     58   300       0.0294       0.0292     0.000206        0.248         1.56       0.0239
+     58   400       0.0239       0.0236     0.000284        0.208         2.29       0.0295
+     58   500       0.0245       0.0239     0.000558         0.21          3.1       0.0445
+     58   600       0.0214       0.0209      0.00053        0.212         2.34       0.0426
+     58   700       0.0291       0.0289      0.00018        0.238         1.31       0.0196
+     58   800       0.0235       0.0233     0.000116        0.224         1.06       0.0172
+     58   801       0.0199       0.0198      7.4e-05        0.172        0.613       0.0136
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     58   100       0.0309       0.0305     0.000336        0.257         2.37       0.0251
+     58   102        0.027       0.0269     0.000103        0.239        0.884       0.0184
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              58 4279.236    0.005       0.0254      0.00038       0.0257        0.226          1.7       0.0281
+! Validation         58 4279.236    0.005       0.0255     0.000237       0.0258        0.228         1.45       0.0217
+Wall time: 4279.236482938053
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     59   100       0.0208       0.0193      0.00145        0.202         3.19       0.0696
+     59   200       0.0284       0.0283     0.000115        0.249        0.765       0.0157
+     59   300       0.0221       0.0219     0.000186        0.221         1.33       0.0209
+     59   400       0.0261        0.026     7.62e-05        0.209        0.698       0.0152
+     59   500       0.0257       0.0257     5.21e-05        0.218        0.541       0.0109
+     59   600       0.0243       0.0241     0.000258        0.231         2.48         0.03
+     59   700       0.0278       0.0274     0.000415        0.235         3.23       0.0385
+     59   800       0.0244       0.0237     0.000751        0.224         3.58       0.0514
+     59   801       0.0248       0.0244     0.000404        0.229         1.86       0.0388
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     59   100       0.0292       0.0287     0.000572        0.252         3.27       0.0441
+     59   102       0.0239       0.0235     0.000336        0.224         1.65       0.0343
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              59 4350.251    0.005       0.0255     0.000388       0.0259        0.226         1.75        0.029
+! Validation         59 4350.251    0.005       0.0245     0.000509        0.025        0.222         2.29       0.0386
+Wall time: 4350.25152036408
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     60   100       0.0469       0.0451      0.00177        0.278            4       0.0562
+     60   200       0.0284       0.0277     0.000616        0.243         2.73       0.0446
+     60   300       0.0243        0.024     0.000264        0.223         1.19       0.0278
+     60   400       0.0217       0.0212     0.000471        0.208         2.35       0.0406
+     60   500       0.0263       0.0261      0.00024        0.227         1.37       0.0251
+     60   600       0.0239       0.0237     0.000157        0.221        0.877       0.0207
+     60   700       0.0314       0.0309     0.000446         0.26          1.3       0.0319
+     60   800       0.0264       0.0263      0.00012         0.23        0.956       0.0193
+     60   801       0.0256       0.0251     0.000406        0.237         1.86       0.0387
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     60   100       0.0325       0.0315     0.000934        0.263         3.21       0.0534
+     60   102       0.0255       0.0249     0.000652        0.239         2.35        0.049
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              60 4425.026    0.005        0.027     0.000524       0.0275        0.235         1.95       0.0327
+! Validation         60 4425.026    0.005        0.026     0.000743       0.0267        0.233         2.61        0.047
+Wall time: 4425.026308477158
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     61   100       0.0187       0.0183     0.000438        0.196         2.36       0.0355
+     61   200       0.0204       0.0201     0.000245        0.186        0.789       0.0242
+     61   300       0.0192       0.0191     0.000121        0.194        0.766       0.0169
+     61   400       0.0325       0.0323     0.000191        0.255         1.27       0.0254
+     61   500       0.0187       0.0184     0.000281        0.199         1.53       0.0287
+     61   600       0.0257       0.0255     0.000178        0.216        0.878       0.0192
+     61   700       0.0168       0.0167     0.000118        0.187         1.71       0.0182
+     61   800       0.0215       0.0205     0.000991        0.202         2.99       0.0406
+     61   801       0.0355       0.0355      9.1e-05        0.281         3.36       0.0181
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     61   100       0.0279       0.0277     0.000266        0.249         2.01       0.0272
+     61   102       0.0212       0.0208     0.000465        0.218         1.99       0.0415
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              61 4494.984    0.005       0.0248     0.000302       0.0251        0.224         1.56       0.0257
+! Validation         61 4494.984    0.005        0.022     0.000499       0.0225        0.211         2.28       0.0396
+Wall time: 4494.98451192514
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     62   100       0.0192       0.0192     7.83e-05        0.187         0.78       0.0143
+     62   200       0.0228        0.022     0.000848        0.206         2.41       0.0499
+     62   300       0.0212       0.0211     0.000137        0.208         1.08        0.019
+     62   400       0.0347       0.0341     0.000608        0.273         2.56       0.0462
+     62   500       0.0282        0.028     0.000254        0.227         1.59       0.0271
+     62   600       0.0437       0.0419      0.00178        0.311         3.66       0.0762
+     62   700       0.0176       0.0175     0.000114        0.197         1.16       0.0197
+     62   800       0.0308         0.03     0.000747         0.25          2.9       0.0469
+     62   801       0.0264       0.0259     0.000516        0.239         1.72       0.0332
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     62   100       0.0389       0.0337      0.00512        0.272           10        0.137
+     62   102       0.0331       0.0294      0.00377        0.253         5.63        0.117
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              62 4570.459    0.005       0.0269     0.000855       0.0277        0.232         2.34       0.0389
+! Validation         62 4570.459    0.005       0.0306      0.00447       0.0351        0.252         7.52        0.127
+Wall time: 4570.459470801055
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     63   100       0.0272       0.0269     0.000238        0.234         2.37       0.0278
+     63   200       0.0244       0.0242     0.000201        0.216        0.855       0.0216
+     63   300       0.0476       0.0473      0.00032        0.256         1.88       0.0315
+     63   400       0.0345       0.0344     6.19e-05        0.252        0.921        0.013
+     63   500        0.031       0.0306      0.00035        0.258          2.9       0.0343
+     63   600       0.0202         0.02     0.000203        0.203         1.09       0.0223
+     63   700       0.0258        0.024      0.00178        0.225         9.41       0.0805
+     63   800       0.0187        0.018     0.000751        0.185         1.85       0.0497
+     63   801       0.0217       0.0216     6.58e-05        0.214          1.1       0.0157
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     63   100       0.0295       0.0294     0.000183        0.256         1.55       0.0228
+     63   102       0.0251       0.0251     7.15e-05        0.235        0.625        0.013
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              63 4642.116    0.005       0.0257     0.000486       0.0262        0.229            2       0.0327
+! Validation         63 4642.116    0.005       0.0235     0.000226       0.0238        0.219         1.24       0.0221
+Wall time: 4642.116615999024
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     64   100       0.0339       0.0337     0.000251        0.269         1.45       0.0258
+     64   200       0.0252       0.0248     0.000428        0.228         1.77        0.034
+     64   300       0.0281        0.028     4.95e-05         0.22        0.543       0.0111
+     64   400       0.0368       0.0365     0.000238        0.265          2.1       0.0287
+     64   500       0.0355       0.0353     0.000174        0.243          1.3       0.0169
+     64   600       0.0373       0.0372     7.19e-05        0.266         2.19       0.0128
+     64   700       0.0239       0.0238     3.35e-05        0.227        0.583       0.0095
+     64   800       0.0228       0.0226     0.000218        0.209         1.57       0.0262
+     64   801       0.0394        0.039     0.000368         0.28          8.5       0.0369
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     64   100       0.0265       0.0264     0.000107        0.242         1.32       0.0167
+     64   102       0.0198       0.0198     1.98e-05        0.213        0.369      0.00769
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              64 4714.699    0.005       0.0258      0.00043       0.0263        0.228         1.87       0.0303
+! Validation         64 4714.699    0.005       0.0226     0.000217       0.0229        0.214         1.14       0.0197
+Wall time: 4714.699555761181
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     65   100       0.0376       0.0334      0.00426        0.264         4.66        0.113
+     65   200       0.0337       0.0335     0.000179        0.259         1.48       0.0232
+     65   300        0.034       0.0337       0.0003        0.251         1.51       0.0271
+     65   400       0.0269       0.0267     0.000209        0.237         1.81       0.0249
+     65   500       0.0181       0.0179     0.000224        0.193        0.973       0.0241
+     65   600        0.027       0.0265     0.000436        0.234         2.35       0.0387
+     65   700       0.0286       0.0282     0.000443        0.232         2.23       0.0356
+     65   800       0.0271        0.027     8.85e-05        0.231        0.766       0.0157
+     65   801        0.021       0.0209     4.49e-05        0.216        0.509      0.00986
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     65   100       0.0306       0.0304      0.00019        0.256         1.85       0.0237
+     65   102       0.0218       0.0216     0.000161        0.224         1.09       0.0227
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              65 4787.101    0.005       0.0279     0.000562       0.0285        0.238         2.05       0.0343
+! Validation         65 4787.101    0.005       0.0243     0.000296       0.0246        0.223         1.62       0.0281
+Wall time: 4787.101544202073
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     66   100       0.0168       0.0165     0.000265         0.17         1.82       0.0251
+     66   200       0.0456        0.043      0.00264        0.296         7.42       0.0824
+     66   300       0.0178       0.0177     3.72e-05        0.195        0.435       0.0101
+     66   400       0.0199       0.0197     0.000233        0.204         1.62        0.025
+     66   500       0.0263       0.0257     0.000623        0.224         2.19       0.0438
+     66   600       0.0238       0.0233     0.000469        0.214         2.98       0.0386
+     66   700       0.0408       0.0407     0.000179        0.268         1.63       0.0233
+     66   800       0.0249       0.0229      0.00205        0.217         3.58       0.0857
+     66   801       0.0536       0.0535     0.000155        0.318         1.81        0.024
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     66   100       0.0277       0.0274     0.000341        0.248         2.58       0.0321
+     66   102       0.0209       0.0207     0.000162        0.215         1.12       0.0233
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              66 4860.032    0.005       0.0272     0.000893       0.0281        0.234          2.4       0.0398
+! Validation         66 4860.032    0.005        0.024     0.000215       0.0242        0.221         1.49       0.0226
+Wall time: 4860.032243915135
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     67   100       0.0147       0.0146     0.000114        0.165        0.697       0.0181
+     67   200       0.0239       0.0239     6.66e-05         0.23        0.509       0.0128
+     67   300       0.0355       0.0352     0.000238        0.268         1.01       0.0251
+     67   400       0.0246       0.0245     0.000103        0.229         0.59       0.0124
+     67   500       0.0136       0.0134     0.000209        0.166        0.966       0.0237
+     67   600       0.0239       0.0235     0.000423        0.217         2.47       0.0273
+     67   700       0.0303       0.0302     8.39e-05        0.249        0.971       0.0147
+     67   800       0.0228       0.0226     0.000217        0.217        0.941        0.021
+     67   801       0.0189       0.0188     0.000106        0.203         1.19       0.0196
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     67   100       0.0277       0.0276     0.000122        0.249         1.37       0.0174
+     67   102       0.0227       0.0226     1.95e-05        0.226         0.31      0.00647
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              67 4932.187    0.005       0.0258     0.000334       0.0261        0.227         1.64       0.0269
+! Validation         67 4932.187    0.005        0.023     0.000109       0.0232        0.217        0.941       0.0144
+Wall time: 4932.1877725941595
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     68   100       0.0275       0.0266     0.000825        0.238         6.96       0.0535
+     68   200       0.0279       0.0277     0.000155         0.23         1.12       0.0225
+     68   300       0.0235       0.0229     0.000524        0.217         2.99       0.0438
+     68   400       0.0224       0.0217     0.000637        0.215         2.95       0.0453
+     68   500       0.0249       0.0246     0.000298         0.23         1.23       0.0263
+     68   600       0.0333       0.0332     7.39e-05         0.27          1.4       0.0145
+     68   700        0.041       0.0404     0.000563        0.291         3.34       0.0438
+     68   800       0.0198       0.0196     0.000222        0.201         1.17       0.0272
+     68   801       0.0241       0.0238     0.000227        0.225         1.13       0.0268
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     68   100       0.0306       0.0305     0.000145        0.259         1.33         0.02
+     68   102       0.0242        0.024     0.000245        0.238         1.31       0.0273
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              68 5005.162    0.005       0.0262     0.000706       0.0269        0.231         2.26       0.0378
+! Validation         68 5005.162    0.005       0.0258     0.000335       0.0261        0.231         1.62       0.0285
+Wall time: 5005.161962920101
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     69   100         0.02       0.0198     0.000218        0.197        0.832       0.0231
+     69   200       0.0335       0.0306      0.00293        0.254         3.67       0.0842
+     69   300        0.029       0.0286     0.000401        0.243         2.25       0.0316
+     69   400       0.0279       0.0277     0.000148        0.232         1.87       0.0195
+     69   500       0.0185        0.018     0.000573        0.188         4.34       0.0439
+     69   600       0.0213        0.021     0.000267        0.211         1.08       0.0271
+     69   700       0.0138       0.0137     0.000137        0.167        0.798       0.0199
+     69   800        0.028       0.0274     0.000622        0.242         5.16       0.0418
+     69   801        0.022       0.0203      0.00167        0.196         2.81       0.0777
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     69   100       0.0294       0.0288     0.000594        0.253         2.66       0.0427
+     69   102       0.0228       0.0217      0.00112        0.225         3.04       0.0634
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              69 5076.909    0.005       0.0266      0.00052       0.0271        0.234         1.92       0.0328
+! Validation         69 5076.909    0.005        0.024       0.0011       0.0251        0.222          3.4       0.0604
+Wall time: 5076.909528035205
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     70   100       0.0208       0.0206     0.000181        0.209         1.21       0.0248
+     70   200       0.0255       0.0253     0.000176        0.218         1.15       0.0238
+     70   300       0.0264       0.0263     5.92e-05        0.231        0.522       0.0106
+     70   400        0.024       0.0238     0.000196        0.221         1.85       0.0226
+     70   500        0.022       0.0214     0.000586        0.198         2.36       0.0455
+     70   600        0.022       0.0217     0.000331        0.209         1.77       0.0285
+     70   700       0.0265       0.0264     0.000137        0.233         1.38       0.0189
+     70   800       0.0232       0.0231     0.000109        0.222        0.739       0.0164
+     70   801       0.0353       0.0349     0.000461        0.291         1.84       0.0384
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     70   100       0.0282       0.0282     5.12e-05        0.249         1.11       0.0118
+     70   102       0.0203       0.0202     9.26e-05        0.216        0.713       0.0149
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              70 5148.315    0.005       0.0256     0.000448       0.0261        0.228         1.83       0.0307
+! Validation         70 5148.315    0.005       0.0232     9.81e-05       0.0233        0.216        0.852       0.0139
+Wall time: 5148.314919083146
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     71   100       0.0194       0.0188     0.000585        0.184         1.79       0.0448
+     71   200       0.0238       0.0226      0.00117        0.212         4.39        0.065
+     71   300       0.0262       0.0243      0.00186         0.22         3.34       0.0807
+     71   400       0.0273       0.0272     0.000111        0.239         1.33       0.0191
+     71   500       0.0226       0.0213      0.00132        0.204         3.88       0.0684
+     71   600       0.0186       0.0185     8.54e-05        0.186        0.579       0.0153
+     71   700       0.0183        0.018     0.000301        0.185         1.23       0.0321
+     71   800       0.0148       0.0147      3.1e-05        0.162        0.456      0.00903
+     71   801       0.0397       0.0397     4.44e-07        0.287       0.0755      0.00118
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     71   100       0.0291       0.0289     0.000231        0.253         1.61       0.0219
+     71   102       0.0213       0.0213      3.5e-05        0.216        0.535       0.0111
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              71 5219.936    0.005       0.0252     0.000525       0.0257        0.224            2       0.0338
+! Validation         71 5219.936    0.005       0.0232     0.000206       0.0235        0.218         1.24       0.0215
+Wall time: 5219.936607092153
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     72   100       0.0343       0.0336     0.000704        0.256         3.74       0.0477
+     72   200       0.0175       0.0166     0.000831        0.181          2.4       0.0509
+     72   300       0.0105       0.0103     0.000164        0.144        0.772       0.0223
+     72   400       0.0219       0.0206       0.0013        0.204         2.46       0.0609
+     72   500       0.0188       0.0185     0.000307        0.186         1.16       0.0284
+     72   600       0.0201       0.0196     0.000493        0.207         2.04       0.0364
+     72   700       0.0192       0.0191     1.74e-05        0.181        0.265      0.00654
+     72   800       0.0139       0.0138     0.000114        0.168        0.654       0.0178
+     72   801       0.0445       0.0441     0.000375        0.286          2.8       0.0359
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     72   100       0.0286        0.028      0.00066        0.248         2.86       0.0432
+     72   102        0.023       0.0222     0.000819        0.225         2.63       0.0547
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              72 5292.251    0.005       0.0241     0.000321       0.0244         0.22         1.62       0.0264
+! Validation         72 5292.251    0.005       0.0231      0.00112       0.0242        0.215         3.43       0.0602
+Wall time: 5292.250959718134
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     73   100       0.0265       0.0263      0.00026        0.225         1.07        0.022
+     73   200       0.0237       0.0227     0.000998        0.221          3.9        0.059
+     73   300       0.0331       0.0331     5.04e-05        0.262        0.712       0.0114
+     73   400        0.025       0.0248     0.000171        0.229         1.34       0.0231
+     73   500       0.0949        0.094     0.000985        0.445         2.89         0.05
+     73   600       0.0264       0.0264      7.5e-05        0.231        0.641       0.0152
+     73   700       0.0282       0.0265      0.00175        0.244         4.07       0.0787
+     73   800       0.0367       0.0364     0.000278        0.276         1.84       0.0289
+     73   801       0.0123       0.0117     0.000569        0.159         1.73       0.0461
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     73   100       0.0414       0.0409     0.000434        0.297         2.56       0.0308
+     73   102       0.0293        0.029      0.00029        0.252         1.22       0.0254
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              73 5365.095    0.005       0.0315      0.00306       0.0345        0.246         2.45         0.04
+! Validation         73 5365.095    0.005       0.0326     0.000499       0.0331         0.26         1.93       0.0334
+Wall time: 5365.09523911518
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     74   100       0.0169       0.0167     0.000188        0.169        0.856       0.0209
+     74   200        0.024       0.0239       0.0001        0.216         0.72       0.0131
+     74   300       0.0323       0.0322     7.03e-05        0.252          1.1       0.0146
+     74   400       0.0288       0.0286     0.000138        0.227        0.976       0.0206
+     74   500       0.0308       0.0305      0.00033        0.256         2.18         0.03
+     74   600       0.0308       0.0299     0.000894        0.253         2.77       0.0557
+     74   700       0.0308       0.0288      0.00204        0.237         3.92       0.0825
+     74   800       0.0418        0.041      0.00076        0.286         1.91       0.0389
+     74   801       0.0268       0.0262     0.000528        0.246         2.09       0.0435
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     74   100       0.0356       0.0337      0.00185        0.273         6.23       0.0785
+     74   102       0.0273       0.0261      0.00119        0.242         3.18       0.0663
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              74 5437.148    0.005       0.0271     0.000416       0.0275        0.232         1.82         0.03
+! Validation         74 5437.148    0.005       0.0282      0.00139       0.0296        0.242         4.26       0.0659
+Wall time: 5437.148214095039
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     75   100        0.028       0.0279     0.000168        0.239         1.03       0.0211
+     75   200        0.024       0.0239     9.79e-05        0.214        0.923        0.017
+     75   300       0.0267       0.0264     0.000251        0.227         1.47       0.0285
+     75   400       0.0295       0.0292     0.000288        0.238         1.71       0.0225
+     75   500       0.0302       0.0299     0.000287        0.238         2.05       0.0256
+     75   600       0.0287       0.0286     0.000116        0.251         1.36       0.0173
+     75   700       0.0215       0.0215     3.45e-05        0.216        0.457      0.00942
+     75   800       0.0477       0.0472     0.000507        0.264         2.15       0.0373
+     75   801       0.0375       0.0331      0.00435        0.274         6.03        0.126
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     75   100       0.0272        0.027     0.000213        0.247         1.88       0.0221
+     75   102       0.0213       0.0212     3.79e-05        0.215        0.542       0.0113
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              75 5509.098    0.005       0.0256      0.00046       0.0261        0.228         1.84       0.0295
+! Validation         75 5509.098    0.005       0.0227     0.000123       0.0229        0.215        0.965        0.015
+Wall time: 5509.0981346471235
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     76   100       0.0338       0.0333      0.00046        0.265            2       0.0365
+     76   200       0.0211       0.0209     0.000174        0.204        0.869       0.0211
+     76   300       0.0296       0.0293     0.000269        0.246        0.951       0.0215
+     76   400       0.0261       0.0261     3.84e-05        0.236        0.572       0.0101
+     76   500       0.0213       0.0212     6.01e-05        0.213        0.643       0.0132
+     76   600       0.0255       0.0253     0.000249        0.235         1.62       0.0266
+     76   700       0.0212       0.0211      0.00014        0.211        0.863       0.0203
+     76   800        0.021       0.0209     0.000151        0.206          1.3       0.0189
+     76   801       0.0271        0.027     8.22e-05        0.245        0.765       0.0159
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     76   100       0.0294       0.0294     6.81e-05        0.253         1.18       0.0136
+     76   102       0.0214       0.0213     0.000103        0.215        0.731       0.0152
+
+
+  Train      #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Train              76 5580.168    0.005       0.0266     0.000369        0.027        0.233         1.69        0.028
+! Validation         76 5580.168    0.005       0.0239     0.000133       0.0241        0.222         1.01       0.0166
+Wall time: 5580.168769429205
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+     77   100        0.024        0.024      1.2e-05        0.226        0.384      0.00617
+     77   200       0.0191       0.0187     0.000415        0.198         2.39       0.0376
+     77   300       0.0386       0.0385     8.91e-05        0.274         0.89       0.0159
+     77   400       0.0233       0.0232     0.000119        0.202        0.503       0.0163
+     77   500       0.0339       0.0332     0.000694        0.266         2.71       0.0481
+     77   600       0.0192       0.0189     0.000316        0.196         1.12       0.0306
+     77   700       0.0245       0.0243     0.000241        0.223         1.76       0.0194
+     77   800       0.0242       0.0242     9.83e-06        0.219        0.305      0.00561
+     77   801       0.0271       0.0269     0.000235        0.225         2.91       0.0292
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae

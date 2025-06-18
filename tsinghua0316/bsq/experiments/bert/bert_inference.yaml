@@ -1,0 +1,56 @@
+# Experiment name
+name: bert-large-uncased
+
+output_dir: out
+extract: true
+
+
+
+#'baseline','quant','inference'
+task_name: 'inference'
+
+# pretrained_path: /root/code/quant/NCF/NCF/out/NeuMF-pre16_20211106-114643/NeuMF-pre16_model.pth
+quant_path: /root/bsq-rel-2.0/experiments/bert/out/squad_quant/pytorch_model.bin
+
+quan:
+  ptq_batches: 100
+  act: # (default for all layers)
+    # Quantizer type (choices: actquan)
+    mode: actquan
+    # Bit width of quantized activation
+    bit: 8
+    all_positive: false
+    per_channel: false
+    symmetric: true
+
+  weight: # (default for all layers)
+    # Quantizer type (choices: weightquan)
+    mode: weightquan
+    bit: 8
+    all_positive: false
+    per_channel: true
+    symmetric: true
+    t_gamma: 0.9
+  excepts:
+    # Specify quantized bit width for some layers, like this:
+    bert.embeddings.word_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+    bert.embeddings.position_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+    bert.embeddings.token_type_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+    linear:
+    qa_outputs:
+      act:
+        bit:
+      weight:
+        bit:

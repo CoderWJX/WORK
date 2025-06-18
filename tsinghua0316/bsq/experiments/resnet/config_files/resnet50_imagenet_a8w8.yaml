@@ -1,0 +1,117 @@
+name: resnet50_imagenet_a8w8
+
+# Name of output directory. Checkpoints and logs will be saved at `pwd`/output_dir
+output_dir: out
+
+# Device to be used
+device:
+  # Use CPU or GPU (choices: cpu, cuda)
+  type: cuda
+  # GPU device IDs to be used. Only valid when device.type is 'cuda'
+  gpu: [0]
+  
+# Dataset loader
+dataloader:
+  # Dataset to train/validate (choices: imagenet, cifar10)
+  dataset: imagenet
+  # Number of categories in the specified dataset (choices: 1000, 10)
+  num_classes: 1000
+  # Path to dataset directory
+#  path: /raid/data/wangb/data/imagenet2012
+  path: /mnt/data/imagenet/raw_images
+  # Size of mini-batch
+  batch_size: 8
+  # Number of data loading workers
+  workers: 8
+  # Seeds random generators in a deterministic way (i.e., set all the seeds 0).
+  # Please keep it true when resuming the experiment from a checkpoint
+  deterministic: false
+  seed: 2019211353
+  # Portion of training dataset to set aside for validation (range: [0, 1))
+  val_split: 0.00
+
+
+
+resume:
+  # Path to a checkpoint to be loaded. Leave blank to skip
+  path:
+  # Resume model parameters only
+  lean: false
+
+log:
+  # Number of best scores to track and report
+  num_best_scores: 3
+  # Print frequency
+  print_freq: 10
+
+arch: resnet50
+
+
+#'baseline','quant','inference'
+task_name: 'quant'
+
+#pretrained_path: /root/code/quant/bsq-net/bsq/out/resnet50_imagenet_baseline_20210908-153930/resnet50_imagenet_baseline_best.pth
+pretrained_path: out/resnet50_imagenet_baseline_best.pth
+
+quan:
+  ptq_batches: 200
+  act: # (default for all layers)
+    # Quantizer type (choices: actquan)
+    mode: actquan
+#    mode: lsq
+    # Bit width of quantized activation
+    bit: 8
+    all_positive: true
+    per_channel: false
+    symmetric: false
+    t_gamma: 0.9
+
+  weight: # (default for all layers)
+    # Quantizer type (choices: weightquan)
+    mode: weightquan
+    bit: 8
+#    mode: lsq
+    all_positive: false
+    per_channel: true
+    symmetric: true
+    t_gamma: 0.9
+  excepts:
+    # Specify quantized bit width for some layers, like this:
+    conv1:
+      act:
+        bit: 8
+        all_positive: false
+        symmetric: true
+      weight:
+        bit: 8
+    fc:
+      act:
+        bit: 8
+      weight:
+        bit: 8
+    linear:
+      act:
+        bit: 8
+      weight:
+        bit: 8
+
+epochs: 1
+
+optimizer:
+  weight:
+    learning_rate: 0.02
+    momentum: 0.9
+    weight_decay: 0.0001
+  quant:
+    learning_rate: 0.00002
+    momentum: 0.9
+    weight_decay: 0.0
+  other:
+    learning_rate: 0.02
+    momentum: 0.9
+    weight_decay: 0.0001
+
+# Learning rate scheduler
+lr_scheduler:
+  milestones: [40,60,80,85]
+  gamma: 0.1

@@ -1,0 +1,108 @@
+2022-03-17 11:53:20,120 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_20220317-115320.log
+2022-03-17 11:53:31,517 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 11:53:31,553 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+2022-03-17 11:53:31,567 - INFO  - Inserted qat quantizers into the original model
+2022-03-17 11:53:46,546 - INFO  - initialized activation quantization parameters
+2022-03-17 11:53:46,547 - INFO  - NeuMF(
+  (embed_user_GMF): QuanEmbedding(
+    6040, 32
+    (quan_w_fn): ActQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_GMF): QuanEmbedding(
+    3706, 32
+    (quan_w_fn): ActQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_user_MLP): QuanEmbedding(
+    6040, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_MLP): QuanEmbedding(
+    3706, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (MLP_layers): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): QuanLinear(
+      in_features=256, out_features=128, bias=True
+      (quan_w_fn): ActQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): QuanLinear(
+      in_features=128, out_features=64, bias=True
+      (quan_w_fn): ActQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (5): ReLU()
+    (6): Dropout(p=0.0, inplace=False)
+    (7): QuanLinear(
+      in_features=64, out_features=32, bias=True
+      (quan_w_fn): ActQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (8): ReLU()
+  )
+  (predict_layer): QuanLinear(
+    in_features=64, out_features=1, bias=True
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): IdentityQuan()
+  )
+)
+
+2022-03-17 11:53:46,548 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+2022-03-17 11:53:46,548 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7f9e3ccd1f40>
+
+2022-03-17 11:53:46,548 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+2022-03-17 11:54:06,852 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_best.pth.tar
+
+2022-03-17 11:54:06,853 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.341   Top5: 43.703]
+2022-03-17 11:54:06,854 - INFO  - loss:-1.0000	HR: 71.3411	NDCG: 43.7030
+2022-03-17 11:54:06,854 - INFO  - >>>>>>>> Epoch   0
+2022-03-17 12:00:48,130 - INFO  - Scoreboard best 1 ==> Epoch [0][Top1: 71.358   Top5: 43.709]
+2022-03-17 12:00:48,131 - INFO  - Scoreboard best 2 ==> Epoch [-1][Top1: 71.341   Top5: 43.703]
+2022-03-17 12:00:48,189 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_best.pth.tar
+
+2022-03-17 12:00:48,189 - INFO  - The time elapse of epoch 000 is: 00: 06: 41
+2022-03-17 12:00:48,189 - INFO  - loss:0.2038	test_loss:6.5296	HR: 71.3576	NDCG: 43.7091	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 12:00:48,189 - INFO  - >>>>>>>> Epoch   1
+2022-03-17 12:07:32,088 - INFO  - Scoreboard best 1 ==> Epoch [0][Top1: 71.358   Top5: 43.709]
+2022-03-17 12:07:32,089 - INFO  - Scoreboard best 2 ==> Epoch [-1][Top1: 71.341   Top5: 43.703]
+2022-03-17 12:07:32,089 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.341   Top5: 43.614]
+2022-03-17 12:07:32,129 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-115320/ncf32_checkpoint.pth.tar
+
+2022-03-17 12:07:32,130 - INFO  - The time elapse of epoch 001 is: 00: 06: 43
+2022-03-17 12:07:32,130 - INFO  - loss:0.2039	test_loss:6.2808	HR: 71.3411	NDCG: 43.6139	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 12:07:32,130 - INFO  - >>>>>>>> Epoch -1 (final model evaluation)
+2022-03-17 12:07:51,936 - INFO  - loss:-1.0000	HR: 71.3411	NDCG: 43.6139
+2022-03-17 12:07:51,937 - INFO  - Program completed successfully ... exiting ...

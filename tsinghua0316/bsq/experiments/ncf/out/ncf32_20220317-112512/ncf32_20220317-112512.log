@@ -1,0 +1,6 @@
+2022-03-17 11:25:12,650 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-112512/ncf32_20220317-112512.log
+2022-03-17 11:25:24,091 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 11:25:24,118 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = None

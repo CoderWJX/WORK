@@ -1,0 +1,158 @@
+Torch device: cuda
+{'_jit_bailout_depth': 2, '_jit_fusion_strategy': [('DYNAMIC', 3)], 'root': '/mnt/yujie.zeng/project_2023/allegro_models/', 'run_name': 'Light-Allegro-3Layer-6rmax_qat', 'wandb': False, 'wandb_project': 'aspirin', 'model_builders': ['allegro.model.Allegro', 'PerSpeciesRescale', 'ForceOutput', 'RescaleEnergyEtc'], 'dataset_statistics_stride': 1, 'default_dtype': 'float32', 'allow_tf32': False, 'verbose': 'info', 'model_debug_mode': False, 'equivariance_test': False, 'grad_anomaly_mode': False, 'append': True, 'taskname': 'qat', 'base_train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0', 'train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-6rmax_qat_bs16', 'qat_batch_size': 16, 'repeat': 1, 'quan': {'ptq_batches': 200, 'act': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'weight': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'excepts': {'conv1': {'act': {'bit': 8, 'all_positive': False, 'symmetric': True}, 'weight': {'bit': 8}}, 'fc': {'act': {'bit': 8}, 'weight': {'bit': 8}}, 'linear': {'act': {'bit': 8}, 'weight': {'bit': 8}}}}, 'seed': 123456, 'dataset_seed': 123456, 'r_max': 6.0, 'avg_num_neighbors': 72.66349029541016, 'BesselBasis_trainable': True, 'PolynomialCutoff_p': 6, 'l_max': 2, 'parity': 'o3_restricted', 'num_layers': 3, 'env_embed_multiplicity': 16, 'embed_initial_edge': True, 'two_body_latent_mlp_latent_dimensions': [32, 32, 32, 32], 'two_body_latent_mlp_nonlinearity': 'silu', 'two_body_latent_mlp_initialization': 'uniform', 'latent_mlp_latent_dimensions': [32], 'latent_mlp_nonlinearity': 'silu', 'latent_mlp_initialization': 'uniform', 'latent_resnet': True, 'env_embed_mlp_latent_dimensions': [], 'env_embed_mlp_initialization': 'uniform', 'edge_eng_mlp_latent_dimensions': [32], 'edge_eng_mlp_nonlinearity': None, 'edge_eng_mlp_initialization': 'uniform', 'dataset': 'ase', 'dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Trainset.xyz', 'ase_args': {'format': 'extxyz'}, 'chemical_symbol_to_type': {'N': 0, 'Si': 1}, 'validation_dataset': 'ase', 'validation_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Validset.xyz', 'evaluate_dataset': 'ase', 'evaluate_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Testset.xyz', 'log_batch_freq': 100, 'log_epoch_freq': 1, 'save_checkpoint_freg': -1, 'save_ema_checkpoint_freq': -1, 'n_train': 6402, 'n_val': 810, 'batch_size': 8, 'max_epochs': 50, 'learning_rate': 0.004, 'train_val_split': 'random', 'shuffle': True, 'metrics_key': 'validation_f_mae', 'use_ema': True, 'ema_decay': 0.99, 'ema_use_num_updates': True, 'loss_coeffs': {'forces': 1.0, 'total_energy': [1.0, 'PerAtomMSELoss']}, 'optimizer_name': 'Adam', 'optimizer_params': {'amsgrad': False, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0}, 'lr_scheduler_name': 'ReduceLROnPlateau', 'lr_scheduler_patience': 50, 'lr_scheduler_factor': 0.5, 'early_stopping_upper_bounds': {'cumulative_wall': 604800.0}, 'early_stopping_lower_bounds': {'LR': 1e-05}, 'early_stopping_patiences': {'validation_loss': 100}, 'metrics_components': [['forces', 'mae'], ['forces', 'mae'], ['total_energy', 'mae'], ['total_energy', 'mae', {'PerAtom': True}]], 'torch_version': '1.11.0+cu113', 'e3nn_version': '0.4.4', 'nequip_version': '0.5.4', 'code_commits': {}, 'device': 'cuda', 'train_on_keys': ['forces', 'total_energy'], 'early_stopping': None, 'early_stopping_kwargs': None, 'lr_scheduler_kwargs': None, 'optimizer_kwargs': None, 'max_gradient_norm': inf, 'exclude_keys': [], 'dataloader_num_workers': 0, 'train_idcs': None, 'val_idcs': None, 'init_callbacks': [], 'end_of_epoch_callbacks': [], 'end_of_batch_callbacks': [], 'end_of_train_callbacks': [], 'final_callbacks': [], 'save_checkpoint_freq': -1, 'report_init_validation': True, 'parallel': False}
+Trainset is used.
+Successfully loaded the data set of type ASEDataset(6402)...
+Validset is used.
+Successfully loaded the validation data set of type ASEDataset(810)...
+Using device: cuda
+WARNING: please note that models running on CUDA are usually nondeterministc and that this manifests in the final test errors; for a _more_ deterministic result, please use `--device cpu`
+Loading model... 
+Atomic outputs are scaled by: [N, Si: 1.000000], shifted by [N, Si: 0.000000].
+loaded model from training session
+Successfully load the pretrained model...
+Torch device: cuda
+{'_jit_bailout_depth': 2, '_jit_fusion_strategy': [('DYNAMIC', 3)], 'root': '/mnt/yujie.zeng/project_2023/allegro_models/', 'run_name': 'Light-Allegro-3Layer-6rmax_qat', 'wandb': False, 'wandb_project': 'aspirin', 'model_builders': ['allegro.model.Allegro', 'PerSpeciesRescale', 'ForceOutput', 'RescaleEnergyEtc'], 'dataset_statistics_stride': 1, 'default_dtype': 'float32', 'allow_tf32': False, 'verbose': 'info', 'model_debug_mode': False, 'equivariance_test': False, 'grad_anomaly_mode': False, 'append': True, 'taskname': 'qat', 'base_train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0', 'train_dir': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-6rmax_qat_bs16', 'qat_batch_size': 16, 'repeat': 1, 'quan': {'ptq_batches': 200, 'act': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'weight': {'mode': 'lsq', 'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}, 'excepts': {'conv1': {'act': {'bit': 8, 'all_positive': False, 'symmetric': True}, 'weight': {'bit': 8}}, 'fc': {'act': {'bit': 8}, 'weight': {'bit': 8}}, 'linear': {'act': {'bit': 8}, 'weight': {'bit': 8}}}}, 'seed': 123456, 'dataset_seed': 123456, 'r_max': 6.0, 'avg_num_neighbors': 72.66349029541016, 'BesselBasis_trainable': True, 'PolynomialCutoff_p': 6, 'l_max': 2, 'parity': 'o3_restricted', 'num_layers': 3, 'env_embed_multiplicity': 16, 'embed_initial_edge': True, 'two_body_latent_mlp_latent_dimensions': [32, 32, 32, 32], 'two_body_latent_mlp_nonlinearity': 'silu', 'two_body_latent_mlp_initialization': 'uniform', 'latent_mlp_latent_dimensions': [32], 'latent_mlp_nonlinearity': 'silu', 'latent_mlp_initialization': 'uniform', 'latent_resnet': True, 'env_embed_mlp_latent_dimensions': [], 'env_embed_mlp_initialization': 'uniform', 'edge_eng_mlp_latent_dimensions': [32], 'edge_eng_mlp_nonlinearity': None, 'edge_eng_mlp_initialization': 'uniform', 'dataset': 'ase', 'dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Trainset.xyz', 'ase_args': {'format': 'extxyz'}, 'chemical_symbol_to_type': {'N': 0, 'Si': 1}, 'validation_dataset': 'ase', 'validation_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Validset.xyz', 'evaluate_dataset': 'ase', 'evaluate_dataset_file_name': '/mnt/wjing.chen/2022/dataset/SiN_reduced_dataset/Testset.xyz', 'log_batch_freq': 100, 'log_epoch_freq': 1, 'save_checkpoint_freg': -1, 'save_ema_checkpoint_freq': -1, 'n_train': 6402, 'n_val': 810, 'batch_size': 8, 'max_epochs': 50, 'learning_rate': 0.004, 'train_val_split': 'random', 'shuffle': True, 'metrics_key': 'validation_f_mae', 'use_ema': True, 'ema_decay': 0.99, 'ema_use_num_updates': True, 'loss_coeffs': {'forces': 1.0, 'total_energy': [1.0, 'PerAtomMSELoss']}, 'optimizer_name': 'Adam', 'optimizer_params': {'amsgrad': False, 'betas': (0.9, 0.999), 'eps': 1e-08, 'weight_decay': 0.0}, 'lr_scheduler_name': 'ReduceLROnPlateau', 'lr_scheduler_patience': 50, 'lr_scheduler_factor': 0.5, 'early_stopping_upper_bounds': {'cumulative_wall': 604800.0}, 'early_stopping_lower_bounds': {'LR': 1e-05}, 'early_stopping_patiences': {'validation_loss': 100}, 'metrics_components': [['forces', 'mae'], ['forces', 'mae'], ['total_energy', 'mae'], ['total_energy', 'mae', {'PerAtom': True}]], 'torch_version': '1.11.0+cu113', 'e3nn_version': '0.4.4', 'nequip_version': '0.5.4', 'code_commits': {}, 'device': 'cuda', 'train_on_keys': ['forces', 'total_energy'], 'early_stopping': None, 'early_stopping_kwargs': None, 'lr_scheduler_kwargs': None, 'optimizer_kwargs': None, 'max_gradient_norm': inf, 'exclude_keys': [], 'dataloader_num_workers': 0, 'train_idcs': None, 'val_idcs': None, 'init_callbacks': [], 'end_of_epoch_callbacks': [], 'end_of_batch_callbacks': [], 'end_of_train_callbacks': [], 'final_callbacks': [], 'save_checkpoint_freq': -1, 'report_init_validation': True, 'parallel': False, 'dataset_extra_fixed_fields': {'r_max': 6.0}, 'validation_dataset_extra_fixed_fields': {'r_max': 6.0}, 'dataset_config': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/config.yaml', 'metrics_config': PosixPath('/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/config.yaml'), 'base_model_file': '/mnt/yujie.zeng/project_2023/allegro_models/Light-Allegro-3Layer-rmax6.0/best_model.pth', 'output_fields': []}
+Trainset is used.
+Successfully loaded the data set of type ASEDataset(6402)...
+Validset is used.
+Successfully loaded the validation data set of type ASEDataset(810)...
+Using device: cuda
+WARNING: please note that models running on CUDA are usually nondeterministc and that this manifests in the final test errors; for a _more_ deterministic result, please use `--device cpu`
+Loading model... 
+Atomic outputs are scaled by: [N, Si: 1.000000], shifted by [N, Si: 0.000000].
+loaded model from training session
+Successfully load the pretrained model...
+RescaleOutput(
+  (model): GradientOutput(
+    (func): SequentialGraphNetwork(
+      (one_hot): OneHotAtomEncoding()
+      (radial_basis): RadialBasisEdgeEncoding(
+        (basis): NormalizedBasis(
+          (basis): BesselBasis()
+        )
+        (cutoff): PolynomialCutoff()
+      )
+      (spharm): SphericalHarmonicEdgeAttrs(
+        (sh): SphericalHarmonics()
+      )
+      (allegro): Allegro_Module(
+        (latents): ModuleList(
+          (0): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (1): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (2): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+        )
+        (env_embed_mlps): ModuleList(
+          (0): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (1): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+          (2): QuantScalarMLPFunction(
+            (_forward): RecursiveScriptModule(original_name=GraphModule)
+            (quan_w_fn): LsqQuan()
+            (quan_a_fn): LsqQuan()
+            (_qt_forward): RecursiveScriptModule(
+              original_name=GraphModule
+              (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+            )
+          )
+        )
+        (tps): ModuleList(
+          (0): RecursiveScriptModule(original_name=GraphModule)
+          (1): RecursiveScriptModule(original_name=GraphModule)
+          (2): RecursiveScriptModule(original_name=GraphModule)
+        )
+        (linears): ModuleList(
+          (0): RecursiveScriptModule(original_name=GraphModule)
+          (1): RecursiveScriptModule(original_name=GraphModule)
+          (2): RecursiveScriptModule(original_name=GraphModule)
+        )
+        (env_linears): ModuleList(
+          (0): Identity()
+          (1): Identity()
+          (2): Identity()
+        )
+        (_env_weighter): MakeWeightedChannels()
+        (final_latent): QuantScalarMLPFunction(
+          (_forward): RecursiveScriptModule(original_name=GraphModule)
+          (quan_w_fn): LsqQuan()
+          (quan_a_fn): LsqQuan()
+          (_qt_forward): RecursiveScriptModule(
+            original_name=GraphModule
+            (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+          )
+        )
+      )
+      (edge_eng): ScalarMLP(
+        (_module): QuantScalarMLPFunction(
+          (_forward): RecursiveScriptModule(original_name=GraphModule)
+          (quan_w_fn): LsqQuan()
+          (quan_a_fn): LsqQuan()
+          (_qt_forward): RecursiveScriptModule(
+            original_name=GraphModule
+            (quan_w_fn): RecursiveScriptModule(original_name=LsqQuan)
+          )
+        )
+      )
+      (edge_eng_sum): EdgewiseEnergySum()
+      (per_species_rescale): PerSpeciesScaleShift()
+      (total_energy_sum): AtomwiseReduce()
+    )
+  )
+)
+Number of weights: 43096
+! Starting training ...
+
+validation
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      0   100         1.72         1.12        0.593         1.54         88.5          1.4
+      0   102         1.97         1.38        0.589         1.74         71.1         1.48
+
+
+  Initialization     #    Epoch      wal       LR       loss_f       loss_e         loss        f_mae        e_mae      e/N_mae
+! Initial Validation          0   20.435    0.004         1.18        0.804         1.98         1.51         90.7         1.64
+Wall time: 20.435204826993868
+! Best model        0    1.515
+
+training
+# Epoch batch         loss       loss_f       loss_e        f_mae        e_mae      e/N_mae
+      1   100        0.494        0.491      0.00343        0.911         7.57        0.095
+      1   200        0.207        0.197      0.00972         0.66          6.2        0.157
+      1   300        0.244        0.242      0.00172        0.695         3.29       0.0534

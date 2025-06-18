@@ -1,0 +1,117 @@
+# Experiment name
+name: ncf32
+
+output_dir: out
+
+debug: true
+extract: true
+
+# Device to be used
+device:
+  # Use CPU or GPU (choices: cpu, cuda)
+  type: cpu
+  # GPU device IDs to be used. Only valid when device.type is 'cuda'
+  #gpu: [1,]
+
+# dataset name
+dataloader:
+  dataset: 'ml-1m'
+  #assert dataset in ['ml-1m', 'pinterest-20']
+  path: '/home/duanhuiliu/tsinghua1215/datasets/ncf/ml-1m/'
+  batch_size: 256
+  top_k: 10
+  num_ng: 4
+  test_num_ng: 99
+  batch_size: 256
+  # Number of data loading workers
+  workers: 8
+  # Seeds random generators in a deterministic way (i.e., set all the seeds 0).
+  # Please keep it true when resuming the experiment from a checkpoint
+  deterministic: false
+  user_num: 6040
+  item_num: 3706
+  
+
+arch: ncf32
+
+
+#'baseline','quant','inference'
+task_name: 'inference'
+
+# pretrained_path: /root/code/quant/NCF/NCF/out/NeuMF-pre16_20211106-114643/NeuMF-pre16_model.pth
+#pretrained_path: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32_20211215-151250/ncf32_best.pth
+#quant_path: /home/duanhuiliu/tsinghua1215/experiments/ncf/./out/ncf32_20220316-074226/ncf32_int8model.pth
+quant_path: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-114128/ncf32_best_int8.pth
+#pretrained_path: /home/duanhuiliu/tsinghua1215/experiments/ncf/./out/ncf32_20220316-074226/ncf32_int8model.pth
+#pretrained_path: /home/duanhuiliu/tsinghua1215/experiments/ncf/./out/ncf32_20220223-053844/ncf32_int8model.pth
+
+quan:
+  ptq_batches: 1000
+  act: # (default for all layers)
+    # Quantizer type (choices: actquan)
+    mode: actquan
+    # Bit width of quantized activation
+    bit: 8
+    all_positive: true
+    per_channel: false
+    symmetric: false
+
+  weight: # (default for all layers)
+    # Quantizer type (choices: weightquan)
+    mode: weightquan
+    bit: 8
+    all_positive: false
+    per_channel: true
+    symmetric: true
+    t_gamma: 0.75
+  excepts:
+    # Specify quantized bit width for some layers, like this:
+    predict_layer:
+      act:
+        bit: 
+      weight:
+        bit:
+    embed_user_MLP:
+      act:
+        bit:
+      weight:
+        bit:
+    embed_item_MLP:
+      act:
+        bit:
+      weight:
+        bit:
+    MLP_layers.1:
+      act:
+        bit: 8
+        all_positive: false
+        per_channel: false
+        symmetric: true
+      weight:
+        bit: 8
+
+epochs: 20
+
+optimizer:
+  type: SGD
+  weight:
+    learning_rate: 0.00005
+    momentum: 0.9
+    weight_decay: 0.000
+  quant:
+    learning_rate: 0.001
+    momentum: 0.9
+    weight_decay: 0.0
+  other:
+    learning_rate: 0.00005
+    momentum: 0.9
+    weight_decay: 0.00
+
+# Learning rate scheduler
+lr_scheduler:
+        type: multistep
+        milestones: [10, 16]
+        gamma: 0.1
+        #type: exp
+        #gamma: 0.8
+        #last_epoch: 15

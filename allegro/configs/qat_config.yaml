@@ -1,0 +1,41 @@
+quan:
+  ptq_batches: 200
+  act: # (default for all layers)
+    # Quantizer type (choices: actquan)
+#    mode: actquan
+    mode: lsq
+    # Bit width of quantized activation
+    bit: 8
+    all_positive: false
+    per_channel: false
+    symmetric: true
+#    t_gamma: 0.9
+
+  weight: # (default for all layers)
+    # Quantizer type (choices: weightquan)
+#    mode: weightquan
+    mode: lsq
+    bit: 8
+    all_positive: false
+    per_channel: false
+    symmetric: true
+#    t_gamma: 0.9
+  excepts:
+    # Specify quantized bit width for some layers, like this:
+    conv1:
+      act:
+        bit: 8
+        all_positive: false
+        symmetric: true
+      weight:
+        bit: 8
+    fc:
+      act:
+        bit: 8
+      weight:
+        bit: 8
+    linear:
+      act:
+        bit: 8
+      weight:
+        bit: 8

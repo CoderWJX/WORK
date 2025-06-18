@@ -1,0 +1,224 @@
+2021-12-15 13:04:07,790 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_20211215-130407.log
+2021-12-15 13:04:21,010 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2021-12-15 13:04:21,039 - INFO  - Created `mlp32` model for `ml-1m` dataset
+          Use pre-trained model = None
+2021-12-15 13:04:21,039 - INFO  - baseline!
+2021-12-15 13:04:23,215 - INFO  - Optimizer: Adam (
+           Parameter Group 0
+               amsgrad: False
+               betas: (0.9, 0.999)
+               eps: 1e-08
+               initial_lr: 0.001
+               lr: 0.001
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               amsgrad: False
+               betas: (0.9, 0.999)
+               eps: 1e-08
+               initial_lr: 0.001
+               lr: 0.001
+               weight_decay: 0.0
+           )
+2021-12-15 13:04:23,215 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7ffaed9d5190>
+
+2021-12-15 13:04:23,215 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+2021-12-15 13:04:38,092 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:04:38,092 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 10.132   Top5: 4.703]
+2021-12-15 13:04:38,093 - INFO  - loss:-1.0000	HR: 10.1325	NDCG: 4.7026
+2021-12-15 13:04:38,093 - INFO  - >>>>>>>> Epoch   0
+2021-12-15 13:06:30,388 - INFO  - Scoreboard best 1 ==> Epoch [0][Top1: 55.182   Top5: 30.788]
+2021-12-15 13:06:30,388 - INFO  - Scoreboard best 2 ==> Epoch [-1][Top1: 10.132   Top5: 4.703]
+2021-12-15 13:06:30,447 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:06:30,448 - INFO  - The time elapse of epoch 000 is: 00: 01: 52
+2021-12-15 13:06:30,448 - INFO  - loss:0.3386	test_loss:3.2977	HR: 55.1821	NDCG: 30.7878	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:06:30,448 - INFO  - >>>>>>>> Epoch   1
+2021-12-15 13:08:21,159 - INFO  - Scoreboard best 1 ==> Epoch [1][Top1: 60.662   Top5: 34.561]
+2021-12-15 13:08:21,159 - INFO  - Scoreboard best 2 ==> Epoch [0][Top1: 55.182   Top5: 30.788]
+2021-12-15 13:08:21,160 - INFO  - Scoreboard best 3 ==> Epoch [-1][Top1: 10.132   Top5: 4.703]
+2021-12-15 13:08:21,213 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:08:21,214 - INFO  - The time elapse of epoch 001 is: 00: 01: 50
+2021-12-15 13:08:21,214 - INFO  - loss:0.2919	test_loss:3.7244	HR: 60.6623	NDCG: 34.5613	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:08:21,214 - INFO  - >>>>>>>> Epoch   2
+2021-12-15 13:10:10,951 - INFO  - Scoreboard best 1 ==> Epoch [2][Top1: 64.089   Top5: 37.539]
+2021-12-15 13:10:10,951 - INFO  - Scoreboard best 2 ==> Epoch [1][Top1: 60.662   Top5: 34.561]
+2021-12-15 13:10:10,951 - INFO  - Scoreboard best 3 ==> Epoch [0][Top1: 55.182   Top5: 30.788]
+2021-12-15 13:10:10,999 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:10:10,999 - INFO  - The time elapse of epoch 002 is: 00: 01: 49
+2021-12-15 13:10:10,999 - INFO  - loss:0.2726	test_loss:4.0541	HR: 64.0894	NDCG: 37.5389	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:10:10,999 - INFO  - >>>>>>>> Epoch   3
+2021-12-15 13:12:00,784 - INFO  - Scoreboard best 1 ==> Epoch [3][Top1: 65.795   Top5: 38.502]
+2021-12-15 13:12:00,785 - INFO  - Scoreboard best 2 ==> Epoch [2][Top1: 64.089   Top5: 37.539]
+2021-12-15 13:12:00,785 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 60.662   Top5: 34.561]
+2021-12-15 13:12:00,846 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:12:00,846 - INFO  - The time elapse of epoch 003 is: 00: 01: 49
+2021-12-15 13:12:00,846 - INFO  - loss:0.2605	test_loss:4.3362	HR: 65.7947	NDCG: 38.5017	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:12:00,846 - INFO  - >>>>>>>> Epoch   4
+2021-12-15 13:13:51,962 - INFO  - Scoreboard best 1 ==> Epoch [4][Top1: 66.689   Top5: 39.550]
+2021-12-15 13:13:51,962 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 65.795   Top5: 38.502]
+2021-12-15 13:13:51,962 - INFO  - Scoreboard best 3 ==> Epoch [2][Top1: 64.089   Top5: 37.539]
+2021-12-15 13:13:52,033 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:13:52,034 - INFO  - The time elapse of epoch 004 is: 00: 01: 51
+2021-12-15 13:13:52,034 - INFO  - loss:0.2523	test_loss:4.4782	HR: 66.6887	NDCG: 39.5496	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:13:52,034 - INFO  - >>>>>>>> Epoch   5
+2021-12-15 13:15:44,181 - INFO  - Scoreboard best 1 ==> Epoch [5][Top1: 68.079   Top5: 40.516]
+2021-12-15 13:15:44,182 - INFO  - Scoreboard best 2 ==> Epoch [4][Top1: 66.689   Top5: 39.550]
+2021-12-15 13:15:44,182 - INFO  - Scoreboard best 3 ==> Epoch [3][Top1: 65.795   Top5: 38.502]
+2021-12-15 13:15:44,238 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:15:44,238 - INFO  - The time elapse of epoch 005 is: 00: 01: 52
+2021-12-15 13:15:44,238 - INFO  - loss:0.2459	test_loss:4.4106	HR: 68.0795	NDCG: 40.5162	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:15:44,239 - INFO  - >>>>>>>> Epoch   6
+2021-12-15 13:17:33,819 - INFO  - Scoreboard best 1 ==> Epoch [6][Top1: 68.361   Top5: 40.629]
+2021-12-15 13:17:33,820 - INFO  - Scoreboard best 2 ==> Epoch [5][Top1: 68.079   Top5: 40.516]
+2021-12-15 13:17:33,820 - INFO  - Scoreboard best 3 ==> Epoch [4][Top1: 66.689   Top5: 39.550]
+2021-12-15 13:17:33,877 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:17:33,877 - INFO  - The time elapse of epoch 006 is: 00: 01: 49
+2021-12-15 13:17:33,877 - INFO  - loss:0.2406	test_loss:4.6820	HR: 68.3609	NDCG: 40.6285	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:17:33,878 - INFO  - >>>>>>>> Epoch   7
+2021-12-15 13:19:25,142 - INFO  - Scoreboard best 1 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:19:25,142 - INFO  - Scoreboard best 2 ==> Epoch [6][Top1: 68.361   Top5: 40.629]
+2021-12-15 13:19:25,142 - INFO  - Scoreboard best 3 ==> Epoch [5][Top1: 68.079   Top5: 40.516]
+2021-12-15 13:19:25,195 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:19:25,195 - INFO  - The time elapse of epoch 007 is: 00: 01: 51
+2021-12-15 13:19:25,195 - INFO  - loss:0.2359	test_loss:5.0582	HR: 68.5430	NDCG: 41.3224	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:19:25,195 - INFO  - >>>>>>>> Epoch   8
+2021-12-15 13:21:17,578 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:21:17,578 - INFO  - Scoreboard best 2 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:21:17,578 - INFO  - Scoreboard best 3 ==> Epoch [6][Top1: 68.361   Top5: 40.629]
+2021-12-15 13:21:17,633 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_best.pth.tar
+
+2021-12-15 13:21:17,633 - INFO  - The time elapse of epoch 008 is: 00: 01: 52
+2021-12-15 13:21:17,633 - INFO  - loss:0.2315	test_loss:4.9580	HR: 68.9735	NDCG: 41.4906	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:21:17,633 - INFO  - >>>>>>>> Epoch   9
+2021-12-15 13:23:07,702 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:23:07,703 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:23:07,703 - INFO  - Scoreboard best 3 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:23:07,751 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:23:07,751 - INFO  - The time elapse of epoch 009 is: 00: 01: 50
+2021-12-15 13:23:07,752 - INFO  - loss:0.2273	test_loss:5.3159	HR: 68.5927	NDCG: 41.4400	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:23:07,752 - INFO  - >>>>>>>> Epoch  10
+2021-12-15 13:24:58,439 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:24:58,439 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:24:58,440 - INFO  - Scoreboard best 3 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:24:58,475 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:24:58,475 - INFO  - The time elapse of epoch 010 is: 00: 01: 50
+2021-12-15 13:24:58,475 - INFO  - loss:0.2235	test_loss:5.1280	HR: 68.0629	NDCG: 41.0480	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:24:58,475 - INFO  - >>>>>>>> Epoch  11
+2021-12-15 13:26:47,772 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:26:47,772 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:26:47,773 - INFO  - Scoreboard best 3 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:26:47,807 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:26:47,807 - INFO  - The time elapse of epoch 011 is: 00: 01: 49
+2021-12-15 13:26:47,808 - INFO  - loss:0.2203	test_loss:5.3266	HR: 68.3940	NDCG: 41.5120	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:26:47,808 - INFO  - >>>>>>>> Epoch  12
+2021-12-15 13:28:38,136 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:28:38,137 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:28:38,137 - INFO  - Scoreboard best 3 ==> Epoch [7][Top1: 68.543   Top5: 41.322]
+2021-12-15 13:28:38,173 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:28:38,173 - INFO  - The time elapse of epoch 012 is: 00: 01: 50
+2021-12-15 13:28:38,173 - INFO  - loss:0.2166	test_loss:5.5783	HR: 68.2285	NDCG: 41.5330	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:28:38,173 - INFO  - >>>>>>>> Epoch  13
+2021-12-15 13:30:28,122 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:30:28,123 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:30:28,123 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:30:28,171 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:30:28,171 - INFO  - The time elapse of epoch 013 is: 00: 01: 49
+2021-12-15 13:30:28,171 - INFO  - loss:0.2136	test_loss:5.6987	HR: 68.5430	NDCG: 41.5145	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:30:28,171 - INFO  - >>>>>>>> Epoch  14
+2021-12-15 13:32:21,194 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:32:21,194 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:32:21,194 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:32:21,231 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:32:21,232 - INFO  - The time elapse of epoch 014 is: 00: 01: 53
+2021-12-15 13:32:21,232 - INFO  - loss:0.2106	test_loss:5.7498	HR: 67.6325	NDCG: 41.1461	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:32:21,232 - INFO  - >>>>>>>> Epoch  15
+2021-12-15 13:34:11,017 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:34:11,017 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:34:11,017 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:34:11,060 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:34:11,061 - INFO  - The time elapse of epoch 015 is: 00: 01: 49
+2021-12-15 13:34:11,061 - INFO  - loss:0.2076	test_loss:5.8087	HR: 67.7318	NDCG: 41.7022	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:34:11,061 - INFO  - >>>>>>>> Epoch  16
+2021-12-15 13:36:01,196 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:36:01,197 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:36:01,197 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:36:01,232 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:36:01,232 - INFO  - The time elapse of epoch 016 is: 00: 01: 50
+2021-12-15 13:36:01,232 - INFO  - loss:0.2049	test_loss:6.1051	HR: 68.1126	NDCG: 41.5975	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:36:01,232 - INFO  - >>>>>>>> Epoch  17
+2021-12-15 13:37:50,767 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:37:50,767 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:37:50,767 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:37:50,805 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:37:50,805 - INFO  - The time elapse of epoch 017 is: 00: 01: 49
+2021-12-15 13:37:50,806 - INFO  - loss:0.2021	test_loss:6.3266	HR: 67.2517	NDCG: 41.0153	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:37:50,806 - INFO  - >>>>>>>> Epoch  18
+2021-12-15 13:39:44,493 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:39:44,494 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:39:44,494 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:39:44,528 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:39:44,528 - INFO  - The time elapse of epoch 018 is: 00: 01: 53
+2021-12-15 13:39:44,528 - INFO  - loss:0.1996	test_loss:6.4153	HR: 67.1689	NDCG: 41.0109	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:39:44,528 - INFO  - >>>>>>>> Epoch  19
+2021-12-15 13:41:34,645 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 68.974   Top5: 41.491]
+2021-12-15 13:41:34,646 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 68.593   Top5: 41.440]
+2021-12-15 13:41:34,646 - INFO  - Scoreboard best 3 ==> Epoch [13][Top1: 68.543   Top5: 41.514]
+2021-12-15 13:41:34,682 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/mlp32_baseline_20211215-130407/mlp32_baseline_checkpoint.pth.tar
+
+2021-12-15 13:41:34,683 - INFO  - The time elapse of epoch 019 is: 00: 01: 50
+2021-12-15 13:41:34,683 - INFO  - loss:0.1973	test_loss:6.6737	HR: 67.7980	NDCG: 41.0362	weight_lr: 0.0010000	initial_lr:0.0010000
+2021-12-15 13:41:34,683 - INFO  - >>>>>>>> Epoch -1 (final model evaluation)
+2021-12-15 13:41:48,691 - INFO  - loss:-1.0000	HR: 67.7980	NDCG: 41.0362
+2021-12-15 13:41:48,692 - INFO  - Program completed successfully ... exiting ...

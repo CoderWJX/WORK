@@ -1,0 +1,272 @@
+2022-03-17 15:18:35,848 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_20220317-151835.log
+2022-03-17 15:18:47,729 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 15:18:47,764 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+2022-03-17 15:18:47,793 - INFO  - Inserted qat quantizers into the original model
+2022-03-17 15:19:02,534 - INFO  - initialized activation quantization parameters
+2022-03-17 15:19:02,534 - INFO  - NeuMF(
+  (embed_user_GMF): QuanEmbedding(
+    6040, 32
+    (quan_w_fn): WeightQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_GMF): QuanEmbedding(
+    3706, 32
+    (quan_w_fn): WeightQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_user_MLP): QuanEmbedding(
+    6040, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_MLP): QuanEmbedding(
+    3706, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (MLP_layers): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): QuanLinear(
+      in_features=256, out_features=128, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): QuanLinear(
+      in_features=128, out_features=64, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (5): ReLU()
+    (6): Dropout(p=0.0, inplace=False)
+    (7): QuanLinear(
+      in_features=64, out_features=32, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (8): ReLU()
+  )
+  (predict_layer): QuanLinear(
+    in_features=64, out_features=1, bias=True
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): IdentityQuan()
+  )
+)
+
+2022-03-17 15:19:02,536 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+2022-03-17 15:19:02,536 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7fc33f48a340>
+
+2022-03-17 15:19:02,536 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+2022-03-17 15:19:25,964 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+2022-03-17 15:19:25,964 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:19:25,965 - INFO  - loss:-1.0000	HR: 71.4404	NDCG: 43.7116
+2022-03-17 15:19:25,965 - INFO  - >>>>>>>> Epoch   0
+2022-03-17 15:26:35,878 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:26:35,879 - INFO  - Scoreboard best 2 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+2022-03-17 15:26:35,912 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 15:26:35,912 - INFO  - The time elapse of epoch 000 is: 00: 07: 09
+2022-03-17 15:26:35,913 - INFO  - loss:0.2038	test_loss:6.5191	HR: 71.1093	NDCG: 43.6416	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 15:26:35,913 - INFO  - >>>>>>>> Epoch   1
+2022-03-17 15:33:50,605 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:33:50,605 - INFO  - Scoreboard best 2 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 15:33:50,605 - INFO  - Scoreboard best 3 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+2022-03-17 15:33:50,660 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 15:33:50,660 - INFO  - The time elapse of epoch 001 is: 00: 07: 14
+2022-03-17 15:33:50,660 - INFO  - loss:0.2039	test_loss:6.2840	HR: 71.2086	NDCG: 43.6023	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 15:33:50,660 - INFO  - >>>>>>>> Epoch   2
+2022-03-17 15:41:05,906 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:41:05,907 - INFO  - Scoreboard best 2 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 15:41:05,907 - INFO  - Scoreboard best 3 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+2022-03-17 15:41:05,941 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 15:41:05,941 - INFO  - The time elapse of epoch 002 is: 00: 07: 15
+2022-03-17 15:41:05,941 - INFO  - loss:0.2036	test_loss:6.3813	HR: 71.0927	NDCG: 43.5326	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 15:41:05,941 - INFO  - >>>>>>>> Epoch   3
+2022-03-17 15:48:23,030 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:48:23,031 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 15:48:23,031 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 15:48:23,067 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 15:48:23,067 - INFO  - The time elapse of epoch 003 is: 00: 07: 17
+2022-03-17 15:48:23,067 - INFO  - loss:0.2036	test_loss:6.5152	HR: 71.3245	NDCG: 43.5971	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 15:48:23,067 - INFO  - >>>>>>>> Epoch   4
+2022-03-17 15:55:38,737 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 15:55:38,738 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 15:55:38,738 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 15:55:38,768 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 15:55:38,768 - INFO  - The time elapse of epoch 004 is: 00: 07: 15
+2022-03-17 15:55:38,769 - INFO  - loss:0.2036	test_loss:6.4178	HR: 71.1424	NDCG: 43.5723	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 15:55:38,769 - INFO  - >>>>>>>> Epoch   5
+2022-03-17 16:02:56,456 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 16:02:56,456 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 16:02:56,457 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 16:02:56,490 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 16:02:56,490 - INFO  - The time elapse of epoch 005 is: 00: 07: 17
+2022-03-17 16:02:56,490 - INFO  - loss:0.2037	test_loss:6.2614	HR: 71.1755	NDCG: 43.5321	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 16:02:56,491 - INFO  - >>>>>>>> Epoch   6
+2022-03-17 16:10:21,618 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 16:10:21,618 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 16:10:21,618 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+2022-03-17 16:10:21,651 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 16:10:21,651 - INFO  - The time elapse of epoch 006 is: 00: 07: 25
+2022-03-17 16:10:21,652 - INFO  - loss:0.2035	test_loss:6.4752	HR: 71.2086	NDCG: 43.5566	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 16:10:21,652 - INFO  - >>>>>>>> Epoch   7
+2022-03-17 16:17:40,943 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 16:17:40,943 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 16:17:40,943 - INFO  - Scoreboard best 3 ==> Epoch [7][Top1: 71.275   Top5: 43.625]
+2022-03-17 16:17:40,979 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 16:17:40,979 - INFO  - The time elapse of epoch 007 is: 00: 07: 19
+2022-03-17 16:17:40,979 - INFO  - loss:0.2038	test_loss:6.4152	HR: 71.2748	NDCG: 43.6249	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 16:17:40,979 - INFO  - >>>>>>>> Epoch   8
+2022-03-17 16:25:07,039 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 16:25:07,040 - INFO  - Scoreboard best 2 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 16:25:07,040 - INFO  - Scoreboard best 3 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+2022-03-17 16:25:07,096 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+2022-03-17 16:25:07,096 - INFO  - The time elapse of epoch 008 is: 00: 07: 26
+2022-03-17 16:25:07,096 - INFO  - loss:0.2035	test_loss:6.5609	HR: 71.4735	NDCG: 43.7679	weight_lr: 0.0000500	initial_lr:0.0000500
+2022-03-17 16:25:07,096 - INFO  - >>>>>>>> Epoch   9
+2022-03-17 16:32:27,800 - INFO  - Scoreboard best 1 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 16:32:27,801 - INFO  - Scoreboard best 2 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+2022-03-17 16:32:27,801 - INFO  - Scoreboard best 3 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+2022-03-17 16:32:27,835 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 16:32:27,836 - INFO  - The time elapse of epoch 009 is: 00: 07: 20
+2022-03-17 16:32:27,836 - INFO  - loss:0.2035	test_loss:6.5240	HR: 71.4735	NDCG: 43.7353	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 16:32:27,836 - INFO  - >>>>>>>> Epoch  10
+2022-03-17 16:39:53,384 - INFO  - Scoreboard best 1 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 16:39:53,385 - INFO  - Scoreboard best 2 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 16:39:53,385 - INFO  - Scoreboard best 3 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+2022-03-17 16:39:53,441 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+2022-03-17 16:39:53,441 - INFO  - The time elapse of epoch 010 is: 00: 07: 25
+2022-03-17 16:39:53,441 - INFO  - loss:0.2031	test_loss:6.5676	HR: 71.4901	NDCG: 43.7687	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 16:39:53,441 - INFO  - >>>>>>>> Epoch  11
+2022-03-17 16:47:27,039 - INFO  - Scoreboard best 1 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 16:47:27,040 - INFO  - Scoreboard best 2 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 16:47:27,040 - INFO  - Scoreboard best 3 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+2022-03-17 16:47:27,073 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 16:47:27,073 - INFO  - The time elapse of epoch 011 is: 00: 07: 33
+2022-03-17 16:47:27,073 - INFO  - loss:0.2034	test_loss:6.5228	HR: 71.3742	NDCG: 43.7218	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 16:47:27,073 - INFO  - >>>>>>>> Epoch  12
+2022-03-17 16:54:50,100 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 16:54:50,101 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 16:54:50,101 - INFO  - Scoreboard best 3 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 16:54:50,157 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+2022-03-17 16:54:50,157 - INFO  - The time elapse of epoch 012 is: 00: 07: 23
+2022-03-17 16:54:50,157 - INFO  - loss:0.2032	test_loss:6.5188	HR: 71.5563	NDCG: 43.7823	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 16:54:50,157 - INFO  - >>>>>>>> Epoch  13
+2022-03-17 17:02:18,067 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:02:18,068 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:02:18,068 - INFO  - Scoreboard best 3 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+2022-03-17 17:02:18,100 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:02:18,101 - INFO  - The time elapse of epoch 013 is: 00: 07: 27
+2022-03-17 17:02:18,101 - INFO  - loss:0.2032	test_loss:6.5527	HR: 71.4073	NDCG: 43.7209	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 17:02:18,101 - INFO  - >>>>>>>> Epoch  14
+2022-03-17 17:09:46,393 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:09:46,394 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:09:46,394 - INFO  - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+2022-03-17 17:09:46,428 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:09:46,428 - INFO  - The time elapse of epoch 014 is: 00: 07: 28
+2022-03-17 17:09:46,428 - INFO  - loss:0.2031	test_loss:6.5220	HR: 71.4901	NDCG: 43.7536	weight_lr: 0.0000050	initial_lr:0.0000500
+2022-03-17 17:09:46,428 - INFO  - >>>>>>>> Epoch  15
+2022-03-17 17:17:17,321 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:17:17,321 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:17:17,321 - INFO  - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+2022-03-17 17:17:17,356 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:17:17,356 - INFO  - The time elapse of epoch 015 is: 00: 07: 30
+2022-03-17 17:17:17,357 - INFO  - loss:0.2032	test_loss:6.5397	HR: 71.3079	NDCG: 43.7895	weight_lr: 0.0000005	initial_lr:0.0000500
+2022-03-17 17:17:17,357 - INFO  - >>>>>>>> Epoch  16
+2022-03-17 17:24:51,450 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:24:51,450 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:24:51,450 - INFO  - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+2022-03-17 17:24:51,498 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:24:51,499 - INFO  - The time elapse of epoch 016 is: 00: 07: 34
+2022-03-17 17:24:51,499 - INFO  - loss:0.2030	test_loss:6.5430	HR: 71.4735	NDCG: 43.7907	weight_lr: 0.0000005	initial_lr:0.0000500
+2022-03-17 17:24:51,499 - INFO  - >>>>>>>> Epoch  17
+2022-03-17 17:32:27,539 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:32:27,540 - INFO  - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:32:27,540 - INFO  - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+2022-03-17 17:32:27,574 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:32:27,574 - INFO  - The time elapse of epoch 017 is: 00: 07: 36
+2022-03-17 17:32:27,574 - INFO  - loss:0.2029	test_loss:6.5320	HR: 71.4735	NDCG: 43.7824	weight_lr: 0.0000005	initial_lr:0.0000500
+2022-03-17 17:32:27,574 - INFO  - >>>>>>>> Epoch  18
+2022-03-17 17:40:04,917 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:40:04,917 - INFO  - Scoreboard best 2 ==> Epoch [18][Top1: 71.523   Top5: 43.819]
+2022-03-17 17:40:04,917 - INFO  - Scoreboard best 3 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:40:04,949 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:40:04,950 - INFO  - The time elapse of epoch 018 is: 00: 07: 37
+2022-03-17 17:40:04,950 - INFO  - loss:0.2030	test_loss:6.5341	HR: 71.5232	NDCG: 43.8195	weight_lr: 0.0000005	initial_lr:0.0000500
+2022-03-17 17:40:04,950 - INFO  - >>>>>>>> Epoch  19
+2022-03-17 17:47:42,752 - INFO  - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+2022-03-17 17:47:42,753 - INFO  - Scoreboard best 2 ==> Epoch [18][Top1: 71.523   Top5: 43.819]
+2022-03-17 17:47:42,753 - INFO  - Scoreboard best 3 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+2022-03-17 17:47:42,786 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+2022-03-17 17:47:42,786 - INFO  - The time elapse of epoch 019 is: 00: 07: 37
+2022-03-17 17:47:42,786 - INFO  - loss:0.2032	test_loss:6.5397	HR: 71.4238	NDCG: 43.7558	weight_lr: 0.0000005	initial_lr:0.0000500
+2022-03-17 17:47:42,786 - INFO  - >>>>>>>> Epoch -1 (final model evaluation)
+2022-03-17 17:48:17,813 - INFO  - loss:-1.0000	HR: 71.4238	NDCG: 43.7558
+2022-03-17 17:48:17,814 - INFO  - Program completed successfully ... exiting ...

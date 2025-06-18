@@ -1,0 +1,4 @@
+2021-12-17 11:41:44,601 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32_20211217-114144/ncf32_20211217-114144.log
+2021-12-17 11:42:01,280 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)

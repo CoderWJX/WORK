@@ -1,0 +1,77 @@
+2023-02-08 15:27:39,231 - INFO  - Log file for this run: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230208-152739/resnet50_imagenet_a8w8_20230208-152739.log
+2023-02-08 15:27:44,530 - INFO  - Dataset `imagenet` size:
+          Training Set = 1281167 (160146)
+        Validation Set = 50000 (6250)
+              Test Set = 50000 (6250)
+2023-02-08 15:27:45,016 - INFO  - Created `resnet50` model for `imagenet` dataset
+          Use pre-trained model = out/resnet50_imagenet_baseline_best.pth
+2023-02-08 15:27:45,527 - INFO  - Inserted qat quantizers into the original model
+2023-02-08 15:27:56,288 - INFO  - initialized activation quantization parameters
+2023-02-08 15:27:56,294 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 0.02
+               lr: 0.02
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0001
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 0.02
+               lr: 0.02
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0001
+           )
+2023-02-08 15:27:56,295 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7fb26e8e5fa0>
+
+2023-02-08 15:27:56,295 - INFO  - >>>>>>>> Epoch   0
+2023-02-08 15:27:56,295 - INFO  - Training: 1281167 samples (8 per mini-batch)
+2023-02-08 15:28:09,884 - INFO  - Training [0][   10/160146]   Loss nan   Top1 2.500000   Top5 2.500000   BatchTime 1.358834   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:28:18,224 - INFO  - Training [0][   20/160146]   Loss nan   Top1 1.250000   Top5 1.250000   BatchTime 1.096415   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:28:26,392 - INFO  - Training [0][   30/160146]   Loss nan   Top1 0.833333   Top5 0.833333   BatchTime 1.003185   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:28:34,539 - INFO  - Training [0][   40/160146]   Loss nan   Top1 0.625000   Top5 0.625000   BatchTime 0.956065   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:28:43,075 - INFO  - Training [0][   50/160146]   Loss nan   Top1 0.500000   Top5 0.500000   BatchTime 0.935571   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:28:54,232 - INFO  - Training [0][   60/160146]   Loss nan   Top1 0.416667   Top5 0.833333   BatchTime 0.965606   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:29:03,313 - INFO  - Training [0][   70/160146]   Loss nan   Top1 0.357143   Top5 0.714286   BatchTime 0.957383   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:29:11,335 - INFO  - Training [0][   80/160146]   Loss nan   Top1 0.312500   Top5 0.781250   BatchTime 0.937982   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:29:19,381 - INFO  - Training [0][   90/160146]   Loss nan   Top1 0.277778   Top5 0.694444   BatchTime 0.923162   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:29:27,560 - INFO  - Training [0][  100/160146]   Loss nan   Top1 0.250000   Top5 0.625000   BatchTime 0.912634   weight_LR 0.020000   quant_LR 0.000020   other_LR 0.020000   
+2023-02-08 15:29:29,165 - INFO  - ==> Top1: 0.245    Top5: 0.613    Loss: nan
+
+2023-02-08 15:29:29,288 - INFO  - Validation: 50000 samples (8 per mini-batch)
+2023-02-08 15:29:36,925 - INFO  - Validation [0][   10/ 6250]   Loss nan   Top1 37.500000   Top5 100.000000   BatchTime 0.704257   
+2023-02-08 15:29:43,938 - INFO  - Validation [0][   20/ 6250]   Loss nan   Top1 31.250000   Top5 100.000000   BatchTime 0.702757   
+2023-02-08 15:29:51,012 - INFO  - Validation [0][   30/ 6250]   Loss nan   Top1 20.833333   Top5 100.000000   BatchTime 0.704332   
+2023-02-08 15:29:58,122 - INFO  - Validation [0][   40/ 6250]   Loss nan   Top1 15.625000   Top5 78.125000   BatchTime 0.705982   
+2023-02-08 15:30:05,158 - INFO  - Validation [0][   50/ 6250]   Loss nan   Top1 12.500000   Top5 62.500000   BatchTime 0.705516   
+2023-02-08 15:30:14,514 - INFO  - Validation [0][   60/ 6250]   Loss nan   Top1 10.416667   Top5 52.083333   BatchTime 0.743858   
+2023-02-08 15:30:24,968 - INFO  - Validation [0][   70/ 6250]   Loss nan   Top1 8.928571   Top5 44.642857   BatchTime 0.786931   
+2023-02-08 15:30:33,225 - INFO  - Validation [0][   80/ 6250]   Loss nan   Top1 7.812500   Top5 39.062500   BatchTime 0.791783   
+2023-02-08 15:30:40,233 - INFO  - Validation [0][   90/ 6250]   Loss nan   Top1 6.944444   Top5 34.722222   BatchTime 0.781669   
+2023-02-08 15:30:47,229 - INFO  - Validation [0][  100/ 6250]   Loss nan   Top1 6.250000   Top5 31.250000   BatchTime 0.773462   
+2023-02-08 15:30:48,624 - INFO  - ==> Top1: 6.127    Top5: 30.637    Loss: nan
+
+2023-02-08 15:30:48,742 - INFO  - Scoreboard best 1 ==> Epoch [0][Top1: 6.127   Top5: 30.637]
+2023-02-08 15:30:49,285 - INFO  - Saving checkpoint to:
+             Current: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230208-152739/resnet50_imagenet_a8w8_checkpoint.pth.tar
+                Best: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230208-152739/resnet50_imagenet_a8w8_best.pth.tar
+
+2023-02-08 15:30:49,285 - INFO  - >>>>>>>> Epoch -1 (final model evaluation)
+2023-02-08 15:30:49,285 - INFO  - Validation: 50000 samples (8 per mini-batch)
+2023-02-08 15:30:56,840 - INFO  - Validation [   10/ 6250]   Loss nan   Top1 37.500000   Top5 100.000000   BatchTime 0.696054   
+2023-02-08 15:31:03,881 - INFO  - Validation [   20/ 6250]   Loss nan   Top1 31.250000   Top5 100.000000   BatchTime 0.700100   
+2023-02-08 15:31:12,037 - INFO  - Validation [   30/ 6250]   Loss nan   Top1 20.833333   Top5 100.000000   BatchTime 0.738571   
+2023-02-08 15:31:22,161 - INFO  - Validation [   40/ 6250]   Loss nan   Top1 15.625000   Top5 78.125000   BatchTime 0.807040   
+2023-02-08 15:31:31,326 - INFO  - Validation [   50/ 6250]   Loss nan   Top1 12.500000   Top5 62.500000   BatchTime 0.828927   
+2023-02-08 15:31:38,348 - INFO  - Validation [   60/ 6250]   Loss nan   Top1 10.416667   Top5 52.083333   BatchTime 0.807804   
+2023-02-08 15:31:45,402 - INFO  - Validation [   70/ 6250]   Loss nan   Top1 8.928571   Top5 44.642857   BatchTime 0.793179   
+2023-02-08 15:31:52,477 - INFO  - Validation [   80/ 6250]   Loss nan   Top1 7.812500   Top5 39.062500   BatchTime 0.782464   
+2023-02-08 15:31:59,474 - INFO  - Validation [   90/ 6250]   Loss nan   Top1 6.944444   Top5 34.722222   BatchTime 0.773265   
+2023-02-08 15:32:06,550 - INFO  - Validation [  100/ 6250]   Loss nan   Top1 6.250000   Top5 31.250000   BatchTime 0.766705   
+2023-02-08 15:32:07,944 - INFO  - ==> Top1: 6.127    Top5: 30.637    Loss: nan
+
+2023-02-08 15:32:08,056 - INFO  - Program completed successfully ... exiting ...

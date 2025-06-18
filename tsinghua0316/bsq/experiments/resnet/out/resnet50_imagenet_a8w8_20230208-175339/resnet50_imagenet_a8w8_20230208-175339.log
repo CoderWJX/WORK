@@ -1,0 +1,8 @@
+2023-02-08 17:53:39,187 - INFO  - Log file for this run: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230208-175339/resnet50_imagenet_a8w8_20230208-175339.log
+2023-02-08 17:53:49,090 - INFO  - Dataset `imagenet` size:
+          Training Set = 1281167 (160146)
+        Validation Set = 50000 (6250)
+              Test Set = 50000 (6250)
+2023-02-08 17:53:49,502 - INFO  - Created `resnet50` model for `imagenet` dataset
+          Use pre-trained model = out/resnet50_imagenet_baseline_best.pth
+2023-02-08 17:53:50,038 - INFO  - Inserted qat quantizers into the original model

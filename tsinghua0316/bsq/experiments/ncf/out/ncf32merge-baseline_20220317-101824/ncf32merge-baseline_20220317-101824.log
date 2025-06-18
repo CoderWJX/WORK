@@ -1,0 +1,7 @@
+2022-03-17 10:18:24,696 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32merge-baseline_20220317-101824/ncf32merge-baseline_20220317-101824.log
+2022-03-17 10:18:36,008 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 10:18:36,035 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = None
+2022-03-17 10:18:36,035 - INFO  - baseline!

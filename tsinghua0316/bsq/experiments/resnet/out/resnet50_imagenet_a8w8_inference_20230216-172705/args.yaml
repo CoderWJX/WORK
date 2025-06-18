@@ -1,0 +1,85 @@
+arch: resnet50
+dataloader:
+  batch_size: 32
+  dataset: imagenet
+  deterministic: false
+  num_classes: 1000
+  path: /mnt/data/imagenet/raw_images
+  seed: 2019211353
+  val_split: 0.0
+  workers: 8
+debug: null
+device:
+  gpu:
+  - 1
+  type: cuda
+epochs: 90
+eval: false
+log:
+  num_best_scores: 3
+  print_freq: 500
+lr_scheduler:
+  gamma: 0.1
+  milestones:
+  - 40
+  - 60
+  - 80
+  - 85
+  type: multistep
+name: resnet50_imagenet_a8w8_inference
+optimizer:
+  other:
+    learning_rate: 0.02
+    momentum: 0.9
+    weight_decay: 0.0001
+  quant:
+    learning_rate: 2.0e-05
+    momentum: 0.9
+    weight_decay: 0.0
+  type: SGD
+  weight:
+    learning_rate: 0.02
+    momentum: 0.9
+    weight_decay: 0.0001
+output_dir: out
+pretrained: true
+pretrained_path: null
+quan:
+  act:
+    all_positive: true
+    bit: 8
+    mode: actquan
+    per_channel: false
+    symmetric: false
+  excepts:
+    conv1:
+      act:
+        all_positive: false
+        bit: 8
+        symmetric: true
+      weight:
+        bit: 8
+    fc:
+      act:
+        bit: 8
+      weight:
+        bit: 8
+    linear:
+      act:
+        bit: 8
+      weight:
+        bit: 8
+  ptq_batches: 200
+  weight:
+    all_positive: false
+    bit: 8
+    mode: weightquan
+    per_channel: true
+    symmetric: true
+    t_gamma: 1
+quant_base_path: null
+quant_path: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230208-best/resnet50_imagenet_a8w8_best.pth
+resume:
+  lean: false
+  path: null
+task_name: inference

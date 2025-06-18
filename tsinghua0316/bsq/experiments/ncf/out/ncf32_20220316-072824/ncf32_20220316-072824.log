@@ -1,0 +1,4 @@
+2022-03-16 07:28:24,261 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32_20220316-072824/ncf32_20220316-072824.log
+2022-03-16 07:28:38,969 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)

@@ -1,0 +1,284 @@
+(bsq-env-0316) root@Inspur145:/home/duanhuiliu/tsinghua0316/bsq/experiments/ncf# time python main.py config_files/ncf32_a8w8.yaml
+INFO - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_20220317-151835.log
+INFO - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+hwl debug: Munch({'name': 'ncf32', 'output_dir': 'out', 'device': Munch({'type': 'cpu', 'gpu': []}), 'debug': True, 'dataloader': Munch({'dataset': 'ml-1m', 'num_classes': 1000, 'path': '/home/duanhuiliu/tsinghua1215/datasets/ncf/ml-1m/', 'batch_size': 256, 'workers': 8, 'deterministic': False, 'seed': 2019211353, 'val_split': 0.0, 'top_k': 10, 'num_ng': 4, 'test_num_ng': 99, 'user_num': 6040, 'item_num': 3706}), 'resume': Munch({'path': None, 'lean': False}), 'log': Munch({'num_best_scores': 3, 'print_freq': 20}), 'arch': 'ncf32', 'pretrained': True, 'task_name': 'quant', 'pretrained_path': '/home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth', 'quant_base_path': None, 'quant_path': None, 'quan': Munch({'ptq_batches': 1000, 'act': Munch({'mode': 'actquan', 'bit': 8, 'per_channel': False, 'symmetric': False, 'all_positive': True}), 'weight': Munch({'mode': 'weightquan', 'bit': 8, 'per_channel': True, 'symmetric': True, 'all_positive': False, 't_gamma': 0.75}), 'excepts': Munch({'predict_layer': Munch({'act': Munch({'bit': None}), 'weight': Munch({'bit': None})}), 'embed_user_MLP': Munch({'act': Munch({'bit': None}), 'weight': Munch({'bit': None})}), 'embed_item_MLP': Munch({'act': Munch({'bit': None}), 'weight': Munch({'bit': None})}), 'MLP_layers.1': Munch({'act': Munch({'bit': 8, 'all_positive': False, 'per_channel': False, 'symmetric': True}), 'weight': Munch({'bit': 8})})})}), 'eval': False, 'epochs': 20, 'optimizer': Munch({'type': 'SGD', 'weight': Munch({'learning_rate': 5e-05, 'momentum': 0.9, 'weight_decay': 0.0}), 'quant': Munch({'learning_rate': 0.001, 'momentum': 0.9, 'weight_decay': 0.0}), 'other': Munch({'learning_rate': 5e-05, 'momentum': 0.9, 'weight_decay': 0.0})}), 'lr_scheduler': Munch({'type': 'multistep', 'milestones': [10, 16], 'gamma': 0.1})})
+hwl debug: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+hwl debug: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+INFO - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+identityquan
+identityquan
+identityquan
+INFO - Inserted qat quantizers into the original model
+INFO - initialized activation quantization parameters
+INFO - NeuMF(
+  (embed_user_GMF): QuanEmbedding(
+    6040, 32
+    (quan_w_fn): WeightQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_GMF): QuanEmbedding(
+    3706, 32
+    (quan_w_fn): WeightQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_user_MLP): QuanEmbedding(
+    6040, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (embed_item_MLP): QuanEmbedding(
+    3706, 128
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): Identity()
+  )
+  (MLP_layers): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): QuanLinear(
+      in_features=256, out_features=128, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): QuanLinear(
+      in_features=128, out_features=64, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (5): ReLU()
+    (6): Dropout(p=0.0, inplace=False)
+    (7): QuanLinear(
+      in_features=64, out_features=32, bias=True
+      (quan_w_fn): WeightQuan()
+      (quan_a_fn): ActQuan()
+    )
+    (8): ReLU()
+  )
+  (predict_layer): QuanLinear(
+    in_features=64, out_features=1, bias=True
+    (quan_w_fn): IdentityQuan()
+    (quan_a_fn): IdentityQuan()
+  )
+)
+
+INFO - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 5e-05
+               lr: 5e-05
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+INFO - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7fc33f48a340>
+
+INFO - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - loss:-1.0000     HR: 71.4404     NDCG: 43.7116
+INFO - >>>>>>>> Epoch   0
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 000 is: 00: 07: 09
+INFO - loss:0.2038      test_loss:6.5191        HR: 71.1093     NDCG: 43.6416   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   1
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Scoreboard best 3 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 001 is: 00: 07: 14
+INFO - loss:0.2039      test_loss:6.2840        HR: 71.2086     NDCG: 43.6023   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   2
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Scoreboard best 3 ==> Epoch [0][Top1: 71.109   Top5: 43.642]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 002 is: 00: 07: 15
+INFO - loss:0.2036      test_loss:6.3813        HR: 71.0927     NDCG: 43.5326   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   3
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 003 is: 00: 07: 17
+INFO - loss:0.2036      test_loss:6.5152        HR: 71.3245     NDCG: 43.5971   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   4
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 004 is: 00: 07: 15
+INFO - loss:0.2036      test_loss:6.4178        HR: 71.1424     NDCG: 43.5723   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   5
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 005 is: 00: 07: 17
+INFO - loss:0.2037      test_loss:6.2614        HR: 71.1755     NDCG: 43.5321   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   6
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Scoreboard best 3 ==> Epoch [1][Top1: 71.209   Top5: 43.602]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 006 is: 00: 07: 25
+INFO - loss:0.2035      test_loss:6.4752        HR: 71.2086     NDCG: 43.5566   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   7
+INFO - Scoreboard best 1 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 2 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Scoreboard best 3 ==> Epoch [7][Top1: 71.275   Top5: 43.625]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 007 is: 00: 07: 19
+INFO - loss:0.2038      test_loss:6.4152        HR: 71.2748     NDCG: 43.6249   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   8
+INFO - Scoreboard best 1 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Scoreboard best 2 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Scoreboard best 3 ==> Epoch [3][Top1: 71.325   Top5: 43.597]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+INFO - The time elapse of epoch 008 is: 00: 07: 26
+INFO - loss:0.2035      test_loss:6.5609        HR: 71.4735     NDCG: 43.7679   weight_lr: 0.0000500    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch   9
+INFO - Scoreboard best 1 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Scoreboard best 2 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+INFO - Scoreboard best 3 ==> Epoch [-1][Top1: 71.440   Top5: 43.712]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 009 is: 00: 07: 20
+INFO - loss:0.2035      test_loss:6.5240        HR: 71.4735     NDCG: 43.7353   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  10
+INFO - Scoreboard best 1 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 2 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Scoreboard best 3 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+INFO - The time elapse of epoch 010 is: 00: 07: 25
+INFO - loss:0.2031      test_loss:6.5676        HR: 71.4901     NDCG: 43.7687   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  11
+INFO - Scoreboard best 1 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 2 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Scoreboard best 3 ==> Epoch [9][Top1: 71.474   Top5: 43.735]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 011 is: 00: 07: 33
+INFO - loss:0.2034      test_loss:6.5228        HR: 71.3742     NDCG: 43.7218   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  12
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_best.pth.tar
+
+INFO - The time elapse of epoch 012 is: 00: 07: 23
+INFO - loss:0.2032      test_loss:6.5188        HR: 71.5563     NDCG: 43.7823   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  13
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [8][Top1: 71.474   Top5: 43.768]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 013 is: 00: 07: 27
+INFO - loss:0.2032      test_loss:6.5527        HR: 71.4073     NDCG: 43.7209   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  14
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 014 is: 00: 07: 28
+INFO - loss:0.2031      test_loss:6.5220        HR: 71.4901     NDCG: 43.7536   weight_lr: 0.0000050    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  15
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 015 is: 00: 07: 30
+INFO - loss:0.2032      test_loss:6.5397        HR: 71.3079     NDCG: 43.7895   weight_lr: 0.0000005    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  16
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 016 is: 00: 07: 34
+INFO - loss:0.2030      test_loss:6.5430        HR: 71.4735     NDCG: 43.7907   weight_lr: 0.0000005    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  17
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Scoreboard best 3 ==> Epoch [14][Top1: 71.490   Top5: 43.754]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 017 is: 00: 07: 36
+INFO - loss:0.2029      test_loss:6.5320        HR: 71.4735     NDCG: 43.7824   weight_lr: 0.0000005    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  18
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [18][Top1: 71.523   Top5: 43.819]
+INFO - Scoreboard best 3 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 018 is: 00: 07: 37
+INFO - loss:0.2030      test_loss:6.5341        HR: 71.5232     NDCG: 43.8195   weight_lr: 0.0000005    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch  19
+INFO - Scoreboard best 1 ==> Epoch [12][Top1: 71.556   Top5: 43.782]
+INFO - Scoreboard best 2 ==> Epoch [18][Top1: 71.523   Top5: 43.819]
+INFO - Scoreboard best 3 ==> Epoch [10][Top1: 71.490   Top5: 43.769]
+INFO - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32_20220317-151835/ncf32_checkpoint.pth.tar
+
+INFO - The time elapse of epoch 019 is: 00: 07: 37
+INFO - loss:0.2032      test_loss:6.5397        HR: 71.4238     NDCG: 43.7558   weight_lr: 0.0000005    initial_lr:0.0000500
+INFO - >>>>>>>> Epoch -1 (final model evaluation)
+INFO - loss:-1.0000     HR: 71.4238     NDCG: 43.7558
+INFO - Program completed successfully ... exiting ...
+
+real    149m45.298s
+user    6363m7.465s
+sys     130m22.834s
+

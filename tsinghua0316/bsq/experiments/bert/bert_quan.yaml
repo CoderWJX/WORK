@@ -1,0 +1,110 @@
+# Experiment name
+name: ncf32
+
+output_dir: out
+
+debug: true
+
+# Device to be used
+device:
+  # Use CPU or GPU (choices: cpu, cuda)
+  type: cuda
+  # GPU device IDs to be used. Only valid when device.type is 'cuda'
+  gpu: [8,5,6,7,9,10,11,14,15]
+
+# dataset name
+dataloader:
+  dataset: 'ml-1m'
+  #assert dataset in ['ml-1m', 'pinterest-20']
+  path: '/root/code/quant/NCF/neural_collaborative_filtering/Data/'
+  batch_size: 256
+  top_k: 10
+  num_ng: 4
+  test_num_ng: 99
+  batch_size: 256
+  # Number of data loading workers
+  workers: 8
+  # Seeds random generators in a deterministic way (i.e., set all the seeds 0).
+  # Please keep it true when resuming the experiment from a checkpoint
+  deterministic: false
+  user_num: 6040
+  item_num: 3706
+  
+
+arch: ncf32
+
+
+#'baseline','quant','inference'
+task_name: 'quant'
+
+# pretrained_path: /root/code/quant/NCF/NCF/out/NeuMF-pre16_20211106-114643/NeuMF-pre16_model.pth
+pretrained_path: /root/code/quant/bsq-net/bsq/out/ncf32merge-baseline_20211207-232548/ncf32merge-baseline_ptq2.pth
+
+quan:
+  ptq_batches: 100
+  act: # (default for all layers)
+    # Quantizer type (choices: actquan)
+    mode: actquan
+    # Bit width of quantized activation
+    bit: 8
+    all_positive: false
+    per_channel: false
+    symmetric: true
+
+  weight: # (default for all layers)
+    # Quantizer type (choices: weightquan)
+    mode: weightquan
+    bit: 8
+    all_positive: false
+    per_channel: true
+    symmetric: true
+    t_gamma: 0.9
+  excepts:
+    # Specify quantized bit width for some layers, like this:
+    bert.embeddings.word_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+    bert.embeddings.position_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+    bert.embeddings.token_type_embeddings:
+      act:
+        bit: 16
+      weight:
+        bit: 16
+        #linear:
+    qa_outputs:
+      act:
+        bit:
+      weight:
+        bit:
+
+epochs: 20
+
+optimizer:
+  type: SGD
+  weight:
+    learning_rate: 0.00005
+    momentum: 0.9
+    weight_decay: 0.000
+  quant:
+    learning_rate: 0.001
+    momentum: 0.9
+    weight_decay: 0.0
+  other:
+    learning_rate: 0.00005
+    momentum: 0.9
+    weight_decay: 0.00
+
+# Learning rate scheduler
+lr_scheduler:
+        type: multistep
+        milestones: [10, 16]
+        gamma: 0.1
+        #type: exp
+        #gamma: 0.8
+        #last_epoch: 15

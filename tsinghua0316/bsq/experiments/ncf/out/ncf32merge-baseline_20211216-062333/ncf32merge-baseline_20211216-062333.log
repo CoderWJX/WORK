@@ -1,0 +1,2 @@
+2021-12-16 06:23:33,108 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-062333/ncf32merge-baseline_20211216-062333.log
+2021-12-16 06:23:33,225 - ERROR  - GPU device ID 10 requested, but only 4 devices available

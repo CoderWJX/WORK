@@ -1,0 +1,7 @@
+2023-02-16 17:27:05,166 - INFO  - Log file for this run: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_inference_20230216-172705/resnet50_imagenet_a8w8_inference_20230216-172705.log
+2023-02-16 17:27:14,957 - INFO  - Dataset `imagenet` size:
+          Training Set = 1281167 (40037)
+        Validation Set = 50000 (1563)
+              Test Set = 50000 (1563)
+2023-02-16 17:27:15,236 - INFO  - Created `resnet50` model for `imagenet` dataset
+          Use pre-trained model = None

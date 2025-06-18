@@ -1,0 +1,5 @@
+2023-02-16 17:31:37,557 - INFO  - Log file for this run: /mnt/yujie.zeng/tsinghua0316/bsq/experiments/resnet/out/resnet50_imagenet_a8w8_20230216-173137/resnet50_imagenet_a8w8_20230216-173137.log
+2023-02-16 17:31:47,318 - INFO  - Dataset `imagenet` size:
+          Training Set = 1281167 (160146)
+        Validation Set = 50000 (6250)
+              Test Set = 50000 (6250)

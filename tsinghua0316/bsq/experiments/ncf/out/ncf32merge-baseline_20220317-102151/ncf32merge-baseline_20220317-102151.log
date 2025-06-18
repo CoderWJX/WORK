@@ -1,0 +1,36 @@
+2022-03-17 10:21:51,530 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32merge-baseline_20220317-102151/ncf32merge-baseline_20220317-102151.log
+2022-03-17 10:22:03,086 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-17 10:22:03,113 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = None
+2022-03-17 10:22:03,113 - INFO  - baseline!
+2022-03-17 10:22:03,125 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               maximize: False
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+2022-03-17 10:22:03,125 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7f02fd020f70>
+
+2022-03-17 10:22:03,125 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+2022-03-17 10:22:15,701 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32merge-baseline_20220317-102151/ncf32merge-baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0316/bsq/experiments/ncf/out/ncf32merge-baseline_20220317-102151/ncf32merge-baseline_best.pth.tar
+
+2022-03-17 10:22:15,701 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.672   Top5: 43.859]
+2022-03-17 10:22:15,701 - INFO  - loss:-1.0000	HR: 71.6722	NDCG: 43.8589
+2022-03-17 10:22:15,701 - INFO  - >>>>>>>> Epoch   0

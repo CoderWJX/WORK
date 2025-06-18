@@ -1,0 +1,215 @@
+2022-03-16 06:37:17,839 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_20220316-063717.log
+2022-03-16 06:37:32,769 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2022-03-16 06:37:32,833 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = None
+2022-03-16 06:37:32,833 - INFO  - baseline!
+2022-03-16 06:37:35,601 - INFO  - Optimizer: SGD (
+           Parameter Group 0
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           
+           Parameter Group 1
+               dampening: 0
+               initial_lr: 0.0001
+               lr: 0.0001
+               momentum: 0.9
+               nesterov: False
+               weight_decay: 0.0
+           )
+2022-03-16 06:37:35,602 - INFO  - LR scheduler: <torch.optim.lr_scheduler.MultiStepLR object at 0x7fb8c2bce5b0>
+
+2022-03-16 06:37:35,602 - INFO  - >>>>>>>> Epoch -1 (pre-trained model evaluation)
+2022-03-16 06:37:50,314 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+                Best: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_best.pth.tar
+
+2022-03-16 06:37:50,315 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:37:50,315 - INFO  - loss:-1.0000	HR: 71.6391	NDCG: 43.8090
+2022-03-16 06:37:50,315 - INFO  - >>>>>>>> Epoch   0
+2022-03-16 06:39:55,271 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:39:55,271 - INFO  - Scoreboard best 2 ==> Epoch [0][Top1: 71.457   Top5: 43.709]
+2022-03-16 06:39:55,297 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:39:55,297 - INFO  - The time elapse of epoch 000 is: 00: 02: 04
+2022-03-16 06:39:55,298 - INFO  - loss:0.2050	test_loss:6.2125	HR: 71.4570	NDCG: 43.7089	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:39:55,298 - INFO  - >>>>>>>> Epoch   1
+2022-03-16 06:41:53,384 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:41:53,385 - INFO  - Scoreboard best 2 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:41:53,385 - INFO  - Scoreboard best 3 ==> Epoch [0][Top1: 71.457   Top5: 43.709]
+2022-03-16 06:41:53,420 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:41:53,420 - INFO  - The time elapse of epoch 001 is: 00: 01: 58
+2022-03-16 06:41:53,420 - INFO  - loss:0.2049	test_loss:6.4221	HR: 71.5066	NDCG: 43.8210	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:41:53,420 - INFO  - >>>>>>>> Epoch   2
+2022-03-16 06:43:56,730 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:43:56,731 - INFO  - Scoreboard best 2 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:43:56,731 - INFO  - Scoreboard best 3 ==> Epoch [0][Top1: 71.457   Top5: 43.709]
+2022-03-16 06:43:56,766 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:43:56,766 - INFO  - The time elapse of epoch 002 is: 00: 02: 03
+2022-03-16 06:43:56,766 - INFO  - loss:0.2048	test_loss:6.2811	HR: 71.0596	NDCG: 43.5546	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:43:56,766 - INFO  - >>>>>>>> Epoch   3
+2022-03-16 06:45:56,665 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:45:56,666 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:45:56,666 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:45:56,699 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:45:56,699 - INFO  - The time elapse of epoch 003 is: 00: 01: 59
+2022-03-16 06:45:56,699 - INFO  - loss:0.2046	test_loss:6.5439	HR: 71.5563	NDCG: 43.8188	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:45:56,699 - INFO  - >>>>>>>> Epoch   4
+2022-03-16 06:47:58,690 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:47:58,690 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:47:58,691 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:47:58,725 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:47:58,726 - INFO  - The time elapse of epoch 004 is: 00: 02: 02
+2022-03-16 06:47:58,726 - INFO  - loss:0.2045	test_loss:6.6001	HR: 71.4404	NDCG: 43.7415	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:47:58,726 - INFO  - >>>>>>>> Epoch   5
+2022-03-16 06:49:55,608 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:49:55,608 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:49:55,608 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:49:55,634 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:49:55,634 - INFO  - The time elapse of epoch 005 is: 00: 01: 56
+2022-03-16 06:49:55,636 - INFO  - loss:0.2045	test_loss:6.3697	HR: 71.2583	NDCG: 43.6524	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:49:55,636 - INFO  - >>>>>>>> Epoch   6
+2022-03-16 06:51:57,230 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:51:57,231 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:51:57,231 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:51:57,256 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:51:57,257 - INFO  - The time elapse of epoch 006 is: 00: 02: 01
+2022-03-16 06:51:57,257 - INFO  - loss:0.2041	test_loss:6.5058	HR: 71.3079	NDCG: 43.6488	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:51:57,257 - INFO  - >>>>>>>> Epoch   7
+2022-03-16 06:53:59,804 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:53:59,805 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:53:59,805 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:53:59,839 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:53:59,839 - INFO  - The time elapse of epoch 007 is: 00: 02: 02
+2022-03-16 06:53:59,839 - INFO  - loss:0.2044	test_loss:6.3449	HR: 71.0099	NDCG: 43.3655	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:53:59,839 - INFO  - >>>>>>>> Epoch   8
+2022-03-16 06:55:59,213 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:55:59,214 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:55:59,214 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:55:59,248 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:55:59,248 - INFO  - The time elapse of epoch 008 is: 00: 01: 59
+2022-03-16 06:55:59,248 - INFO  - loss:0.2038	test_loss:6.3890	HR: 71.0099	NDCG: 43.4950	weight_lr: 0.0001000	initial_lr:0.0001000
+2022-03-16 06:55:59,248 - INFO  - >>>>>>>> Epoch   9
+2022-03-16 06:57:59,233 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:57:59,233 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:57:59,233 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:57:59,268 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:57:59,268 - INFO  - The time elapse of epoch 009 is: 00: 02: 00
+2022-03-16 06:57:59,268 - INFO  - loss:0.2039	test_loss:6.3627	HR: 71.3907	NDCG: 43.6074	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 06:57:59,268 - INFO  - >>>>>>>> Epoch  10
+2022-03-16 06:59:57,641 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 06:59:57,641 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 06:59:57,641 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 06:59:57,668 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 06:59:57,668 - INFO  - The time elapse of epoch 010 is: 00: 01: 58
+2022-03-16 06:59:57,668 - INFO  - loss:0.2033	test_loss:6.5401	HR: 71.3576	NDCG: 43.7155	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 06:59:57,668 - INFO  - >>>>>>>> Epoch  11
+2022-03-16 07:02:06,617 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:02:06,618 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:02:06,618 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:02:06,657 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:02:06,657 - INFO  - The time elapse of epoch 011 is: 00: 02: 08
+2022-03-16 07:02:06,657 - INFO  - loss:0.2032	test_loss:6.4619	HR: 71.3079	NDCG: 43.7574	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 07:02:06,657 - INFO  - >>>>>>>> Epoch  12
+2022-03-16 07:04:12,624 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:04:12,625 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:04:12,625 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:04:12,659 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:04:12,659 - INFO  - The time elapse of epoch 012 is: 00: 02: 06
+2022-03-16 07:04:12,659 - INFO  - loss:0.2034	test_loss:6.5320	HR: 71.4073	NDCG: 43.7533	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 07:04:12,659 - INFO  - >>>>>>>> Epoch  13
+2022-03-16 07:06:13,682 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:06:13,683 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:06:13,683 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:06:13,720 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:06:13,720 - INFO  - The time elapse of epoch 013 is: 00: 02: 01
+2022-03-16 07:06:13,720 - INFO  - loss:0.2036	test_loss:6.4944	HR: 71.3742	NDCG: 43.6922	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 07:06:13,720 - INFO  - >>>>>>>> Epoch  14
+2022-03-16 07:08:14,403 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:08:14,404 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:08:14,404 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:08:14,439 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:08:14,439 - INFO  - The time elapse of epoch 014 is: 00: 02: 00
+2022-03-16 07:08:14,439 - INFO  - loss:0.2035	test_loss:6.5076	HR: 71.2748	NDCG: 43.6839	weight_lr: 0.0000100	initial_lr:0.0001000
+2022-03-16 07:08:14,439 - INFO  - >>>>>>>> Epoch  15
+2022-03-16 07:10:18,002 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:10:18,003 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:10:18,003 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:10:18,038 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:10:18,038 - INFO  - The time elapse of epoch 015 is: 00: 02: 03
+2022-03-16 07:10:18,038 - INFO  - loss:0.2034	test_loss:6.3946	HR: 71.2748	NDCG: 43.7083	weight_lr: 0.0000010	initial_lr:0.0001000
+2022-03-16 07:10:18,038 - INFO  - >>>>>>>> Epoch  16
+2022-03-16 07:12:18,763 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:12:18,764 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:12:18,764 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:12:18,797 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:12:18,797 - INFO  - The time elapse of epoch 016 is: 00: 02: 00
+2022-03-16 07:12:18,797 - INFO  - loss:0.2033	test_loss:6.5038	HR: 71.3576	NDCG: 43.7468	weight_lr: 0.0000010	initial_lr:0.0001000
+2022-03-16 07:12:18,797 - INFO  - >>>>>>>> Epoch  17
+2022-03-16 07:14:22,512 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:14:22,513 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:14:22,513 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:14:22,548 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:14:22,548 - INFO  - The time elapse of epoch 017 is: 00: 02: 03
+2022-03-16 07:14:22,549 - INFO  - loss:0.2036	test_loss:6.5028	HR: 71.3245	NDCG: 43.7286	weight_lr: 0.0000010	initial_lr:0.0001000
+2022-03-16 07:14:22,549 - INFO  - >>>>>>>> Epoch  18
+2022-03-16 07:16:18,823 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:16:18,823 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:16:18,824 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:16:18,858 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:16:18,859 - INFO  - The time elapse of epoch 018 is: 00: 01: 56
+2022-03-16 07:16:18,859 - INFO  - loss:0.2033	test_loss:6.5306	HR: 71.4735	NDCG: 43.7674	weight_lr: 0.0000010	initial_lr:0.0001000
+2022-03-16 07:16:18,859 - INFO  - >>>>>>>> Epoch  19
+2022-03-16 07:18:22,856 - INFO  - Scoreboard best 1 ==> Epoch [-1][Top1: 71.639   Top5: 43.809]
+2022-03-16 07:18:22,857 - INFO  - Scoreboard best 2 ==> Epoch [3][Top1: 71.556   Top5: 43.819]
+2022-03-16 07:18:22,857 - INFO  - Scoreboard best 3 ==> Epoch [1][Top1: 71.507   Top5: 43.821]
+2022-03-16 07:18:22,903 - INFO  - Saving checkpoint to:
+             Current: /home/duanhuiliu/tsinghua0302/bsq/experiments/ncf/out/ncf32merge-baseline_20220316-063717/ncf32merge-baseline_checkpoint.pth.tar
+
+2022-03-16 07:18:22,904 - INFO  - The time elapse of epoch 019 is: 00: 02: 04
+2022-03-16 07:18:22,904 - INFO  - loss:0.2036	test_loss:6.5012	HR: 71.4901	NDCG: 43.7801	weight_lr: 0.0000010	initial_lr:0.0001000
+2022-03-16 07:18:22,904 - INFO  - >>>>>>>> Epoch -1 (final model evaluation)
+2022-03-16 07:18:37,606 - INFO  - loss:-1.0000	HR: 71.4901	NDCG: 43.7801
+2022-03-16 07:18:37,607 - INFO  - Program completed successfully ... exiting ...

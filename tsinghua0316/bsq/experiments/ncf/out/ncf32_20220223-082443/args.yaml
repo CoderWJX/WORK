@@ -1,0 +1,94 @@
+arch: ncf32
+dataloader:
+  batch_size: 256
+  dataset: ml-1m
+  deterministic: false
+  item_num: 3706
+  num_classes: 1000
+  num_ng: 4
+  path: /home/duanhuiliu/tsinghua1215/datasets/ncf/ml-1m/
+  seed: 2019211353
+  test_num_ng: 99
+  top_k: 10
+  user_num: 6040
+  val_split: 0.0
+  workers: 8
+debug: true
+device:
+  gpu:
+  - 3
+  type: cuda
+epochs: 2
+eval: false
+log:
+  num_best_scores: 3
+  print_freq: 20
+lr_scheduler:
+  gamma: 0.1
+  milestones:
+  - 10
+  - 16
+  type: multistep
+name: ncf32
+optimizer:
+  other:
+    learning_rate: 5.0e-05
+    momentum: 0.9
+    weight_decay: 0.0
+  quant:
+    learning_rate: 0.001
+    momentum: 0.9
+    weight_decay: 0.0
+  type: SGD
+  weight:
+    learning_rate: 5.0e-05
+    momentum: 0.9
+    weight_decay: 0.0
+output_dir: out
+pretrained: true
+pretrained_path: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+quan:
+  act:
+    all_positive: true
+    bit: 8
+    mode: lsq
+    per_channel: false
+    symmetric: false
+  excepts:
+    MLP_layers.1:
+      act:
+        all_positive: false
+        bit: 8
+        per_channel: false
+        symmetric: true
+      weight:
+        bit: 8
+    embed_item_MLP:
+      act:
+        bit: null
+      weight:
+        bit: null
+    embed_user_MLP:
+      act:
+        bit: null
+      weight:
+        bit: null
+    predict_layer:
+      act:
+        bit: null
+      weight:
+        bit: null
+  ptq_batches: 1000
+  weight:
+    all_positive: false
+    bit: 8
+    mode: lsq
+    per_channel: true
+    symmetric: true
+    t_gamma: 0.75
+quant_base_path: null
+quant_path: null
+resume:
+  lean: false
+  path: null
+task_name: baseline

@@ -1,0 +1,7 @@
+2021-12-17 12:24:02,824 - INFO  - Log file for this run: /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32_20211217-122402/ncf32_20211217-122402.log
+2021-12-17 12:24:16,042 - INFO  - Dataset `ml-1m` size:
+          Training Set = 4970845 (19418)
+              Test Set = 604000 (6040)
+2021-12-17 12:24:16,086 - INFO  - Created `ncf32` model for `ml-1m` dataset
+          Use pre-trained model = /home/duanhuiliu/tsinghua1215/experiments/ncf/out/ncf32merge-baseline_20211216-063417/ncf32merge-baseline.pth
+2021-12-17 12:24:16,125 - INFO  - Inserted qat quantizers into the original model
